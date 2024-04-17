@@ -10,5 +10,11 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class DataModelModule {
+    email!: string
+    password!: string
 
+    constructor() {
+        this.email = ''
+        this.password = ''
+    }
  }

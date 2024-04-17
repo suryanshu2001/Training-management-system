@@ -1,1 +1,44 @@
-<p>home-page works!</p>
+<div class="container">
+    <p>Home</p>
+
+    <div class="mt-2">
+        <div class="card">
+            <div class="card-body">
+                <mat-grid-list cols="4" rowHeight="100px">
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-select placeholder="Bank" #singleSelect>
+                              <mat-option>
+                                <ngx-mat-select-search ></ngx-mat-select-search>
+                              </mat-option>
+                              <mat-option value="1">Bank A</mat-option>
+                              <mat-option value="2">Bank B</mat-option>
+                              <mat-option value="3">Bank C</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                      </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-select placeholder="Bank" #singleSelect>
+                              <mat-option>
+                                <ngx-mat-select-search ></ngx-mat-select-search>
+                              </mat-option>
+                              <mat-option value="1">Bank A</mat-option>
+                              <mat-option value="2">Bank B</mat-option>
+                              <mat-option value="3">Bank C</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        
+                    </mat-grid-tile>
+                   
+                  </mat-grid-list>
+            </div>
+          </div>
+    </div>
+    
+
+   
+      
+</div>

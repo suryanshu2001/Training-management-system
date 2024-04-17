@@ -1,1 +1,37 @@
-<p>login-page works!</p>
+<div class="container">
+  <div class="login-box">
+      <img class="logo" src="../../../../assets/images/logo.png" alt="logo">
+      <form >
+        <mat-form-field>
+          <input type="password" matInput #password />
+          <mat-icon
+           style="cursor: pointer"
+           matSuffix
+           (mousedown)="password.type = 'text'"
+           (mouseup)="password.type = 'password'"
+           [inline]="true">
+            {{ password.type == "password" ? "visibility_off" : "visibility" }}
+           </mat-icon>
+         </mat-form-field>
+       </form>
+      <form>
+          <div class="input-box">
+              <input placeholder="Username"/>
+              <img class="input-icon" src="../../../../assets/icons/profile.png" alt="">
+          </div>
+          <div class="input-box">
+              <input placeholder="Password"/>
+              <img class="input-icon" src="../../../../assets/icons/profile.png" alt="">
+          </div>
+          <div class="check-box-container">
+              <div class="check-box">
+                  <div class="check"></div>
+              </div>
+              <div style="color: white;">Keep me signed in</div>
+          </div>
+          <button>
+              Login
+          </button>
+      </form>
+  </div>
+</div>

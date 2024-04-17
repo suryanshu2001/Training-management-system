@@ -1,14 +1,14 @@
 <div class="container">
   <div class="login-box">
       <img class="logo" src="../../../../assets/images/logo.png" alt="logo">
-      <form >
+      <!-- <form >
         <mat-form-field class="input-box">
           <div class="input-box">
             <input placeholder="Username"/>
             <img class="input-icon" src="../../../../assets/icons/profile.png" alt="">
           </div>
          </mat-form-field>
-        <mat-form-field class="input-box">
+        <mat-form-field>
           <input type="password" matInput #password />
           <mat-icon
            style="cursor: pointer"
@@ -38,6 +38,21 @@
           <button>
               Login
           </button>
+      </form> -->
+      <form class="login-form" [formGroup]="loginForm" style="gap: 4px;">
+        <mat-form-field class="custom-input-field" appearance="outline">
+          <input matInput placeholder="Email" style="color: rgb(255, 255, 255,0.6);" formControlName="email">
+          <span matSuffix style="margin-right: 5px;">
+            <mat-icon>person</mat-icon>
+          </span>
+        </mat-form-field>
+        <mat-form-field class="custom-input-field" appearance="outline">
+          <input matInput placeholder="Password" style="color: rgb(255, 255, 255,0.6);" formControlName="password" [type]="hide ? 'password' : 'text'" class="password-input">
+          <span matSuffix (click)="togglePasswordVisibility()" style="margin-right: 5px;">
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </span>
+        </mat-form-field>
+        <button type="submit" color="primary" [disabled]="isButtonDisabled" (click)="login()">Login</button>
       </form>
   </div>
 </div>

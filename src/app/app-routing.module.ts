@@ -9,14 +9,17 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 
 const routes: Routes = [
   {path:'',component:LoginPageComponent},
-  {path:'dashboard',component:DashboardComponent,
-  canActivate: [authGuardGuard],
-    children:[
-      {path: '', redirectTo: 'home', pathMatch: 'full' },
-      {path:'home',component:HomePageComponent},
-      {path:'dashboard/exams',component:ExamsPageComponent},
-      {path:'dashboardassignments',component:AssignmentsPageComponent}
-    ]},
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuardGuard],
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirect to home by default
+      { path: 'home', component: HomePageComponent },
+      { path: 'exams', component: ExamsPageComponent }, // Updated path
+      { path: 'assignments', component: AssignmentsPageComponent } // Updated path
+    ]
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-content
+    >Simple card
+
+    <mat-grid-list cols="4" rowHeight="2:1">
+      <mat-grid-tile [colspan]="3" [rowspan]="1">
+        <mat-form-field>
+          <mat-select placeholder="Bank" #singleSelect>
+            <mat-option>
+              <ngx-mat-select-search></ngx-mat-select-search>
+            </mat-option>
+            <mat-option value="1">Bank A</mat-option>
+            <mat-option value="2">Bank B</mat-option>
+            <mat-option value="3">Bank C</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+      >
+      <!-- <mat-grid-tile [colspan]="1" [rowspan]="2" style="background-color: pink"
+        >2</mat-grid-tile
+      >
+      <mat-grid-tile [colspan]="1" [rowspan]="1" style="background-color: green"
+        >3</mat-grid-tile
+      >
+      <mat-grid-tile [colspan]="2" [rowspan]="1">4</mat-grid-tile> -->
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

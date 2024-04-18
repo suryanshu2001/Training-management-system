@@ -10,34 +10,34 @@
       </div>
     </div>
     <div class="nav-bar-bottom">
-      <div [ngClass]="activeItem == 'home' ? 'item':'showArrow'" (click)="toggleItem('home')">
+      <a class="item" [class.active]="activeItem === 'home'" (click)="toggleItem('home')" style="text-decoration: none;" routerLink="home">
         <img class="icons" src="../../../../assets/icons/file-icon.png" alt="course">
         <div class="dash-category">
           <div class="item-name">Home</div>
-          <img class="arrow" src="../../../../assets/icons/down-arrow.png" alt="">
+          <img class="arrow" [class.active]="activeItem === 'home'" src="../../../../assets/icons/down-arrow.png" alt="">
         </div>
-      </div>
-      <div class="item" (click)="toggleItem('exams')">
+      </a>
+      <a class="item" [class.active]="activeItem === 'exams'" (click)="toggleItem('exams')" style="text-decoration: none;" routerLink="exams">
         <img class="icons" src="../../../../assets/icons/batch-icon.png" alt="course">
         <div class="dash-category">
           <div class="item-name">Exams</div>
-          <img class="arrow" src="../../../../assets/icons/down-arrow.png" alt="">
+          <img class="arrow" [class.active]="activeItem === 'exams'" src="../../../../assets/icons/down-arrow.png" alt="">
         </div>
-      </div>
-      <div class="item" (click)="toggleItem('assignments')">
+      </a>
+      <a class="item" [class.active]="activeItem === 'assignments'" (click)="toggleItem('assignments')" style="text-decoration: none;" routerLink="assignments">
         <img class="icons" src="../../../../assets/icons/teacher-icon.png" alt="course">
         <div class="dash-category">
           <div class="item-name">Assignment</div>
-          <img class="arrow" src="../../../../assets/icons/down-arrow.png" alt="">
+          <img class="arrow" [class.active]="activeItem === 'assignments'" src="../../../../assets/icons/down-arrow.png" alt="">
         </div>
-      </div>
-      <div class="item" (click)="toggleItem('report')">
+      </a>
+      <a class="item" [class.active]="activeItem === 'report'" (click)="toggleItem('report')" style="text-decoration: none;" routerLink="report">
         <img class="icons" src="../../../../assets/icons/student-icon.png" alt="course">
         <div class="dash-category">
           <div class="item-name">Report</div>
-          <img class="arrow" src="../../../../assets/icons/down-arrow.png" alt="">
+          <img class="arrow" [class.active]="activeItem === 'report'" src="../../../../assets/icons/down-arrow.png" alt="">
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>

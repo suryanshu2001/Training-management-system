@@ -1,44 +1,25 @@
-<div class="container">
-    <p>Home</p>
+<p>Home</p>
 
-    <div class="mt-2">
-        <div class="card">
-            <div class="card-body">
-                <mat-grid-list cols="4" rowHeight="100px">
-                    <mat-grid-tile>
-                        <mat-form-field>
-                            <mat-select placeholder="Bank" #singleSelect>
-                              <mat-option>
-                                <ngx-mat-select-search ></ngx-mat-select-search>
-                              </mat-option>
-                              <mat-option value="1">Bank A</mat-option>
-                              <mat-option value="2">Bank B</mat-option>
-                              <mat-option value="3">Bank C</mat-option>
-                            </mat-select>
-                          </mat-form-field>
-                      </mat-grid-tile>
-                    <mat-grid-tile>
-                        <mat-form-field>
-                            <mat-select placeholder="Bank" #singleSelect>
-                              <mat-option>
-                                <ngx-mat-select-search ></ngx-mat-select-search>
-                              </mat-option>
-                              <mat-option value="1">Bank A</mat-option>
-                              <mat-option value="2">Bank B</mat-option>
-                              <mat-option value="3">Bank C</mat-option>
-                            </mat-select>
-                          </mat-form-field>
-                    </mat-grid-tile>
-                    <mat-grid-tile>
-                        
-                    </mat-grid-tile>
-                   
-                  </mat-grid-list>
-            </div>
-          </div>
+<div class="container mt-2">
+    <div>
+       
     </div>
-    
-
-   
-      
+    <div class="card">
+        <div class="card-body">
+          <div>
+            <div class="container">
+                    <button type="button" class="btn btn-link" style="text-decoration: none; color: black;" (click)="onToggle('batchProgram')">Batches & Programs</button>
+                    <button type="button" class="btn btn-link" style="text-decoration: none; color: black;"  (click)="onToggle('attendance')">Attendance</button>
+                    <br/>
+                    <div *ngIf="tabName == 'batchProgram'" >
+                      <app-batches></app-batches>  
+                    </div>
+                    <div *ngIf="tabName == 'attendance'">
+                      345678987654567887
+                    </div>
+              </div>
+          </div>
+        </div>
+      </div>    
 </div>
+

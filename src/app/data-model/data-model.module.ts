@@ -12,9 +12,11 @@ import { CommonModule } from '@angular/common';
 export class DataModelModule {
     email!: string
     password!: string
+    userLogedin!: boolean
 
     constructor() {
         this.email = ''
         this.password = ''
+        this.userLogedin = false
     }
  }

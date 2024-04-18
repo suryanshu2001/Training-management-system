@@ -1,2 +1,44 @@
-<p>dashboard works!</p>
+<div>
+  <div class="nav-bar">
+    <div class="nav-bar-top">
+      <img class="logo" src="../../../../assets/images/logo.png" alt="logo">
+      <div class="profile">
+        <div class="profile-image">SB</div>
+        <div class="profile-name">Suryanshu Bedi
+          <img class="arrow-1" src="../../../../assets/icons/down-arrow.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="nav-bar-bottom">
+      <div [ngClass]="activeItem == 'home' ? 'item':'showArrow'" (click)="toggleItem('home')">
+        <img class="icons" src="../../../../assets/icons/file-icon.png" alt="course">
+        <div class="dash-category">
+          <div class="item-name">Home</div>
+          <img class="arrow" src="../../../../assets/icons/down-arrow.png" alt="">
+        </div>
+      </div>
+      <div class="item" (click)="toggleItem('exams')">
+        <img class="icons" src="../../../../assets/icons/batch-icon.png" alt="course">
+        <div class="dash-category">
+          <div class="item-name">Exams</div>
+          <img class="arrow" src="../../../../assets/icons/down-arrow.png" alt="">
+        </div>
+      </div>
+      <div class="item" (click)="toggleItem('assignments')">
+        <img class="icons" src="../../../../assets/icons/teacher-icon.png" alt="course">
+        <div class="dash-category">
+          <div class="item-name">Assignment</div>
+          <img class="arrow" src="../../../../assets/icons/down-arrow.png" alt="">
+        </div>
+      </div>
+      <div class="item" (click)="toggleItem('report')">
+        <img class="icons" src="../../../../assets/icons/student-icon.png" alt="course">
+        <div class="dash-category">
+          <div class="item-name">Report</div>
+          <img class="arrow" src="../../../../assets/icons/down-arrow.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <router-outlet></router-outlet>

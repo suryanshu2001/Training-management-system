@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ActiveClickDirective } from './../../../directives/active-click.directive';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
@@ -7,8 +8,14 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule,RouterOutlet],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-
+  activeItem:string='home'
+  constructor(private renderer: Renderer2) { }
+  toggleItem(option:string) {
+    if(option != this.activeItem){
+      this.activeItem = option;
+    }
+  }
 }

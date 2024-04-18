@@ -4,20 +4,22 @@ import { HomePageComponent } from './components/pages/dashboard/home-page/home-p
 import { ExamsPageComponent } from './components/pages/dashboard/exams-page/exams-page.component';
 import { AssignmentsPageComponent } from './components/pages/dashboard/assignments-page/assignments-page.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
-import { authGuardGuard } from './services/auth-guard.guard';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { AuthGuard } from './services/auth-guard.guard';
+
 
 const routes: Routes = [
   {path:'',component:LoginPageComponent},
+  {path:'login',component:LoginPageComponent},
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [authGuardGuard],
+    canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirect to home by default
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomePageComponent },
-      { path: 'exams', component: ExamsPageComponent }, // Updated path
-      { path: 'assignments', component: AssignmentsPageComponent } // Updated path
+      { path: 'exams', component: ExamsPageComponent },
+      { path: 'assignments', component: AssignmentsPageComponent }
     ]
   },
 ];

@@ -7,11 +7,14 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { BatchesComponent } from './batches/batches.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule,MatGridListModule,MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule,NgxMatSelectSearchModule,BatchesComponent,MatGridListModule],
+  imports: [CommonModule,MatGridListModule,MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule,NgxMatSelectSearchModule,BatchesComponent,MatGridListModule,AttendanceComponent],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })

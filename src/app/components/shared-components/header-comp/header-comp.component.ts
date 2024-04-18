@@ -5,13 +5,24 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { NgFor, AsyncPipe } from '@angular/common';
+import { map, startWith } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header-comp',
   standalone: true,
   imports: [
     CommonModule,
+    NgFor,
+    ReactiveFormsModule,
+    AsyncPipe,
+    MatInputModule,
+    MatAutocompleteModule,
     MatCardModule,
     MatGridListModule,
     NgxMatSelectSearchModule,
@@ -22,4 +33,23 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './header-comp.component.html',
   styleUrls: ['./header-comp.component.scss'],
 })
-export class HeaderCompComponent {}
+export class HeaderCompComponent implements OnInit {
+  myControl = new FormControl('');
+  options: string[] = ['One', 'Two', 'Three'];
+  filteredOptions: Observable<string[]> | undefined;
+
+  ngOnInit() {
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map((value) => this._filter(value || ''))
+    );
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter((option) =>
+      option.toLowerCase().includes(filterValue)
+    );
+  }
+}

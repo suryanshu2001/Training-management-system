@@ -44,15 +44,18 @@
   align-items: center;
   gap: 6px;
 }
-.showArrow {
-  width: 2dvw;
-  display: block;
+.item.active {
+  background-color: rgb(209, 209, 209,0.4);
 }
 .arrow{
   display: none;
 }
+.arrow.active{
+  width: 1dvw;
+  display: block;
+}
 .arrow-1{
-  width: 2dvw;
+  width: 1dvw;
 }
 
 .nav-bar-bottom {

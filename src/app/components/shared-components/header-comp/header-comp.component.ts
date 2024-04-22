@@ -12,12 +12,14 @@ import { NgFor, AsyncPipe } from '@angular/common';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header-comp',
   standalone: true,
   imports: [
     CommonModule,
+    MatIconModule,
     NgFor,
     ReactiveFormsModule,
     AsyncPipe,

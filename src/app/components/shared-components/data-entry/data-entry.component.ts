@@ -8,15 +8,20 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, NgForm } from '@angular/forms';
 import {TooltipPosition, MatTooltipModule} from '@angular/material/tooltip';
+import { NgModel } from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 
 @Component({
   selector: 'app-data-entry',
   standalone: true,
-  imports: [CommonModule,MatDatepickerModule,MatInputModule,MatFormFieldModule,MatNativeDateModule,MatIconModule,MatButtonModule,FormsModule,MatTooltipModule,],
+  imports: [CommonModule,MatDatepickerModule,MatInputModule,MatFormFieldModule,MatNativeDateModule,MatIconModule,MatButtonModule,FormsModule,MatTooltipModule,MatGridListModule,MatToolbarModule],
   templateUrl: './data-entry.component.html',
   styleUrls: ['./data-entry.component.scss']
 })
+
 export class DataEntryComponent{
   showTableHeader = false;
   formdata={

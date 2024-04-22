@@ -37,8 +37,8 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class HeaderCompComponent implements OnInit {
   myControl1 = new FormControl('');
-  myControl2 = new FormControl('');
-  myControl3 = new FormControl('');
+  myControl2 = new FormControl({ value: '', disabled: true }); // Initially disabled
+  myControl3 = new FormControl({ value: '', disabled: true }); // Initially disabled
 
   options1: string[] = [
     'Batch 1K2125:No.1',
@@ -72,10 +72,34 @@ export class HeaderCompComponent implements OnInit {
       map((value) => this._filter(value, this.options1))
     );
 
+    // Subscribe to changes in myControl1 to enable/disable myControl2
+    this.myControl1.valueChanges.subscribe((value) => {
+      if (value) {
+        this.myControl2.enable(); // Enable myControl2
+        this.myControl2.reset(); // Reset its value
+      } else {
+        this.myControl2.setValue(''); // Reset its value
+        this.myControl2.disable(); // Disable myControl2
+        this.myControl3.setValue(''); // Reset and disable myControl3
+        this.myControl3.disable();
+      }
+    });
+
     this.filteredOptions2 = this.myControl2.valueChanges.pipe(
       startWith(''),
       map((value) => this._filter(value, this.options2))
     );
+
+    // Subscribe to changes in myControl2 to enable/disable myControl3
+    this.myControl2.valueChanges.subscribe((value) => {
+      if (value) {
+        this.myControl3.enable(); // Enable myControl3
+        this.myControl3.reset(); // Reset its value
+      } else {
+        this.myControl3.setValue(''); // Reset its value
+        this.myControl3.disable(); // Disable myControl3
+      }
+    });
 
     this.filteredOptions3 = this.myControl3.valueChanges.pipe(
       startWith(''),

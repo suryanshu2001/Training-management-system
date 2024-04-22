@@ -1,43 +1,23 @@
 <div class="container">
   <div class="login-box">
       <img class="logo" src="../../../../assets/images/logo.png" alt="logo">
-      <form >
-        <mat-form-field class="input-box">
-          <div class="input-box">
-            <input placeholder="Username"/>
-            <img class="input-icon" src="../../../../assets/icons/profile.png" alt="">
-          </div>
-         </mat-form-field>
-        <mat-form-field class="input-box">
-          <input type="password" matInput #password />
-          <mat-icon
-           style="cursor: pointer"
-           matSuffix
-           (mousedown)="password.type = 'text'"
-           (mouseup)="password.type = 'password'"
-           [inline]="true">
-            {{ password.type == "password" ? "visibility_off" : "visibility" }}
-           </mat-icon>
-         </mat-form-field>
-       </form>
-      <form>
-          <div class="input-box">
-              <input placeholder="Username"/>
-              <img class="input-icon" src="../../../../assets/icons/profile.png" alt="">
-          </div>
-          <div class="input-box">
-              <input placeholder="Password"/>
-              <img class="input-icon" src="../../../../assets/icons/profile.png" alt="">
-          </div>
-          <div class="check-box-container">
-              <div class="check-box">
-                  <div class="check"></div>
-              </div>
-              <div style="color: white;">Keep me signed in</div>
-          </div>
-          <button>
-              Login
-          </button>
+      <form class="login-form" [formGroup]="loginForm" style="gap: 4px;" (ngSubmit)="login();">
+        <mat-form-field class="custom-input-field" appearance="outline">
+          <input matInput placeholder="Email" style="color: rgb(255, 255, 255,0.6);" formControlName="email">
+          <span matSuffix style="margin-right: 5px;">
+            <mat-icon>person</mat-icon>
+          </span>
+        </mat-form-field>
+        <mat-form-field class="custom-input-field" appearance="outline">
+          <input matInput placeholder="Password" style="color: rgb(255, 255, 255,0.6);" formControlName="password" [type]="hide ? 'password' : 'text'" class="password-input">
+          <span matSuffix (click)="togglePasswordVisibility()" style="margin-right: 5px;">
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </span>
+        </mat-form-field>
+        <mat-checkbox class="example-margin" [disabled]="true">Disabled</mat-checkbox>
+        <button type="submit">
+          Login
+        </button>
       </form>
   </div>
 </div>

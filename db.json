@@ -1,0 +1,11 @@
+{
+  "users": [
+    {"userName": "John","email": "john2001@gmail.com", "password":"1234"},
+    {"userName": "Rayan","email": "rayan2001@gmail.com", "password":"1234"},
+    {"userName": "Vimal","email": "vimal2001@gmail.com", "password":"1234"},
+    {"userName": "Keshab","email": "keshab2001@gmail.com", "password":"1234"}
+  ],
+  "courses":[
+    {}
+  ]
+}

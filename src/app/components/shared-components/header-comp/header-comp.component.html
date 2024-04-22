@@ -64,18 +64,22 @@
           </form>
         </div>
         <div class="col-md-2 col-sm-12">
-          <input
+          <!-- <input
             type="text"
             id="username"
             name="username"
             class="form-control"
             style="height: 40px"
             placeholder="Username"
-          /><br />
+          /><br /> -->
+
+          <mat-form-field class="example-full-width">
+            <input matInput disabled value=" Batch date" />
+          </mat-form-field>
         </div>
 
         <div class="col-md-3 col-sm-12">
-          <select class="form-select" aria-label="Select option"></select>
+          <!-- <select class="form-select" aria-label="Select option"></select> -->
 
           <form class="example-form">
             <mat-form-field class="example-full-width">
@@ -127,7 +131,21 @@
               </mat-autocomplete>
             </mat-form-field>
           </form>
+
           <!-- </select> -->
+
+          <!-- <div class="card flex justify-content-center">
+            <p-autoComplete
+              [(ngModel)]="selectedItem"
+              [virtualScroll]="true"
+              [suggestions]="filteredItems"
+              [virtualScrollItemSize]="34"
+              (completeMethod)="filterItems($event)"
+              field="label"
+              [dropdown]="true"
+            >
+            </p-autoComplete>
+          </div> -->
         </div>
       </div>
     </div>

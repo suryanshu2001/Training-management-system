@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DataModelModule } from 'src/app/data-model/data-model.module';
 import { Router } from '@angular/router';
-import { Toast, ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -20,7 +20,7 @@ import { Toast, ToastrModule, ToastrService } from 'ngx-toastr';
     MatInputModule,
     MatIconModule,
     ReactiveFormsModule,
-    MatCheckboxModule,
+    MatCheckboxModule
   ],
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],

@@ -19,7 +19,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   standalone: true,
   imports: [CommonModule,MatDatepickerModule,MatInputModule,MatFormFieldModule,MatNativeDateModule,MatIconModule,MatButtonModule,FormsModule,MatTooltipModule,MatGridListModule,MatToolbarModule],
   templateUrl: './data-entry.component.html',
-  styleUrls: ['./data-entry.component.scss']
+  styleUrls: ['./data-entry.component.scss'],
 })
 
 export class DataEntryComponent{

@@ -36,21 +36,56 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./header-comp.component.scss'],
 })
 export class HeaderCompComponent implements OnInit {
-  myControl = new FormControl('');
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<string[]> | undefined;
+  myControl1 = new FormControl('');
+  myControl2 = new FormControl('');
+  myControl3 = new FormControl('');
+
+  options1: string[] = [
+    'Batch 1K2125:No.1',
+    'Batch 4D4127:No.2',
+    'Batch 12F4155:No.3',
+    'Batch 5A2463:No.4',
+  ];
+
+  options2: string[] = [
+    'Program 1D2125:data science',
+    'Program 1f215 :web development',
+    'Program 2E218 :mysql',
+    'Program 2E2124 :php',
+    'Program 3F2126 :bi',
+  ];
+
+  options3: string[] = [
+    'course 1c4575:php basics',
+    'course 4D124:xml',
+    'course 5a7845:error handling',
+    'course 2z1247 :data visualization',
+  ];
+
+  filteredOptions1: Observable<string[]> | undefined;
+  filteredOptions2: Observable<string[]> | undefined;
+  filteredOptions3: Observable<string[]> | undefined;
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filteredOptions1 = this.myControl1.valueChanges.pipe(
       startWith(''),
-      map((value) => this._filter(value || ''))
+      map((value) => this._filter(value, this.options1))
+    );
+
+    this.filteredOptions2 = this.myControl2.valueChanges.pipe(
+      startWith(''),
+      map((value) => this._filter(value, this.options2))
+    );
+
+    this.filteredOptions3 = this.myControl3.valueChanges.pipe(
+      startWith(''),
+      map((value) => this._filter(value, this.options3))
     );
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.options.filter((option) =>
+  private _filter(value: string | null, options: string[]): string[] {
+    const filterValue = (value || '').toLowerCase();
+    return options.filter((option) =>
       option.toLowerCase().includes(filterValue)
     );
   }

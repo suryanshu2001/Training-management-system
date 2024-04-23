@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -36,9 +42,32 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./header-comp.component.scss'],
 })
 export class HeaderCompComponent implements OnInit {
+  constructor(private cdr: ChangeDetectorRef) {}
+  @Input() toggle: boolean = false;
+  @Output() newToggle = new EventEmitter<boolean>();
+
   myControl1 = new FormControl('');
   myControl2 = new FormControl({ value: '', disabled: true }); // Initially disabled
   myControl3 = new FormControl({ value: '', disabled: true }); // Initially disabled
+
+  buttonActive: boolean = true;
+
+  batchCodeLabel: string = 'Batch Code:Batch Name';
+  programCodeLabel: string = 'Program code:program Name';
+  courseCodeLabel: string = 'Course code:code name';
+  updateDynamicTitles() {
+    this.myControl1.valueChanges.subscribe((value) => {
+      this.batchCodeLabel = value ? value : 'Batch Code:Batch Name';
+    });
+
+    this.myControl2.valueChanges.subscribe((value) => {
+      this.programCodeLabel = value ? value : 'Program code:program Name';
+    });
+
+    this.myControl3.valueChanges.subscribe((value) => {
+      this.courseCodeLabel = value ? value : 'Course code:code name';
+    });
+  }
 
   options1: string[] = [
     'Batch 1K2125:No.1',
@@ -67,6 +96,8 @@ export class HeaderCompComponent implements OnInit {
   filteredOptions3: Observable<string[]> | undefined;
 
   ngOnInit() {
+    this.updateDynamicTitles();
+
     this.filteredOptions1 = this.myControl1.valueChanges.pipe(
       startWith(''),
       map((value) => this._filter(value, this.options1))
@@ -106,11 +137,21 @@ export class HeaderCompComponent implements OnInit {
       map((value) => this._filter(value, this.options3))
     );
   }
+  updateButtonState() {
+    throw new Error('Method not implemented.');
+  }
 
   private _filter(value: string | null, options: string[]): string[] {
     const filterValue = (value || '').toLowerCase();
     return options.filter((option) =>
       option.toLowerCase().includes(filterValue)
     );
+  }
+
+  onCreateExam() {
+    this.toggle = true;
+    this.newToggle.emit(this.toggle);
+    this.cdr.detectChanges();
+    console.log(this.toggle);
   }
 }

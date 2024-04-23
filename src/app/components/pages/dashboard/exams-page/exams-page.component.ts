@@ -10,4 +10,6 @@ import { TableComponent } from '../../../shared-components/table/table.component
   styleUrls: ['./exams-page.component.scss'],
   imports: [CommonModule, HeaderCompComponent, TableComponent],
 })
-export class ExamsPageComponent {}
+export class ExamsPageComponent {
+  toggleShow: boolean = false;
+}

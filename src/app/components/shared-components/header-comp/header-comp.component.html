@@ -32,7 +32,9 @@
         <div class="col-md-3 col-sm-12">
           <form class="example-form">
             <mat-form-field class="example-full-width">
-              <mat-label>Batch Code:Batch Name</mat-label>
+              <!-- <mat-label>Batch Code:Batch Name</mat-label> -->
+              <mat-label>{{ batchCodeLabel }}</mat-label>
+
               <input
                 type="text"
                 placeholder="Pick one"
@@ -61,7 +63,7 @@
         <div class="col-md-3 col-sm-12">
           <form class="example-form">
             <mat-form-field class="example-full-width">
-              <mat-label>Program code:program Name</mat-label>
+              <mat-label>{{ programCodeLabel }}</mat-label>
               <input
                 type="text"
                 placeholder="Pick one"
@@ -84,7 +86,8 @@
         <div class="col-md-3 col-sm-12">
           <form class="example-form">
             <mat-form-field class="example-full-width">
-              <mat-label>Course code:code name</mat-label>
+              <mat-label>{{ courseCodeLabel }}</mat-label>
+
               <input
                 type="text"
                 placeholder="Pick one"
@@ -112,6 +115,8 @@
           type="button"
           class="btn btn-light"
           style="margin-left: 1150px; margin-bottom: 30px"
+          [disabled]="!myControl3.value"
+          (click)="onCreateExam()"
         >
           Create exam
         </button>

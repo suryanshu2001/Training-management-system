@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
@@ -11,15 +11,17 @@ import {TooltipPosition, MatTooltipModule} from '@angular/material/tooltip';
 import { NgModel } from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
+import { HeaderCompComponent } from "../header-comp/header-comp.component";
+import { FileUploadComponent } from '../modals/file-upload/file-upload.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
-  selector: 'app-data-entry',
-  standalone: true,
-  imports: [CommonModule,MatDatepickerModule,MatInputModule,MatFormFieldModule,MatNativeDateModule,MatIconModule,MatButtonModule,FormsModule,MatTooltipModule,MatGridListModule,MatToolbarModule],
-  templateUrl: './data-entry.component.html',
-  styleUrls: ['./data-entry.component.scss'],
+    selector: 'app-data-entry',
+    standalone: true,
+    templateUrl: './data-entry.component.html',
+    styleUrls: ['./data-entry.component.scss'],
+    imports: [CommonModule, MatDatepickerModule, MatInputModule, MatFormFieldModule, MatNativeDateModule, MatIconModule, MatButtonModule, FormsModule, MatTooltipModule, MatGridListModule, MatToolbarModule, HeaderCompComponent,FileUploadComponent]
 })
 
 export class DataEntryComponent{
@@ -30,15 +32,29 @@ export class DataEntryComponent{
     datepick:'',
     time:''
   }
-
+ 
+    @Input() title!:string;
 
   onClick() {
     this.showTableHeader = !this.showTableHeader;
+    
   }
   onSubmit(form:NgForm){
   }
   
   
+  constructor(public dialog: MatDialog) {}
+
+    openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+      this.dialog.open(FileUploadComponent, {
+        // width: '700px',
+        height: 'auto',
+        enterAnimationDuration,
+        exitAnimationDuration,
+      });
+    }
+
+
   }
 
   // isValidTime(regex:string){

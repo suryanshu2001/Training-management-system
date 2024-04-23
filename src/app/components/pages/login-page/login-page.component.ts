@@ -5,7 +5,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { DataModelModule } from 'src/app/data-model/data-model.module';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -24,7 +23,7 @@ import { ToastrService } from 'ngx-toastr';
   ],
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
-  providers:[DataModelModule]
+  providers:[]
 })
 export class LoginPageComponent {
   loginForm!: FormGroup;
@@ -34,9 +33,8 @@ export class LoginPageComponent {
   email!: string
   password!: string
 
-  constructor(private fb: FormBuilder, dataModel: DataModelModule,private route: Router,private toast: ToastrService) {
-    this.email = dataModel.email;
-    this.password = dataModel.password;
+  constructor(private fb: FormBuilder, private route: Router,private toast: ToastrService) {
+
   }
 
   ngOnInit(): void {

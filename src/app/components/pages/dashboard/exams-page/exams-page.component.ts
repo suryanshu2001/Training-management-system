@@ -14,6 +14,7 @@ import { CourseService } from 'src/app/services/course.service';
 })
 
 export class ExamsPageComponent implements OnInit {
+  toggleShow: boolean = false;
   constructor(private courseService: CourseService) { }
   batchNames: string[] = []
   searchBatch: string = ''

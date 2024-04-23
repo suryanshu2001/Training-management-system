@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DataEntryComponent } from "../../../shared-components/data-entry/data-entry.component";
 import { HeaderCompComponent } from 'src/app/components/shared-components/header-comp/header-comp.component';
 import { FileUploadComponent } from 'src/app/components/shared-components/modals/file-upload/file-upload.component';
+import { TableComponent } from 'src/app/components/shared-components/table/table.component';
 @Component({
     selector: 'app-assignments-page',
     standalone: true,
@@ -12,9 +13,13 @@ import { FileUploadComponent } from 'src/app/components/shared-components/modals
         CommonModule,
         DataEntryComponent,
         HeaderCompComponent,
-        FileUploadComponent
+        FileUploadComponent,
+        TableComponent
     ]
 })
 export class AssignmentsPageComponent {
-    
+    toggleShow: boolean = false;
+    updateToggle(toggle:boolean){
+        this.toggleShow = toggle
+      }
 }

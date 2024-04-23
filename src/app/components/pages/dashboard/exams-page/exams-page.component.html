@@ -1,3 +1,4 @@
+
 <!-- <app-table></app-table> -->
 <div
   class="container-fluid"
@@ -26,5 +27,9 @@
       [heading]="'Exams'"
       [toggle]="toggleShow"
     ></app-header-comp>
+    <div *ngIf="toggleShow">
+    <app-data-entry [title]="'Exam-name'"></app-data-entry>
+</div>
+<app-table></app-table>
   </div>
 </div>

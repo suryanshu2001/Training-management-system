@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     ToastrModule.forRoot(),
     MatDialogModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

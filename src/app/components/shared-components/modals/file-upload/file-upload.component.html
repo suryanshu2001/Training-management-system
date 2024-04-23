@@ -3,7 +3,12 @@
 <div id="app">
     <div class="content">
       <div class="file-input-box">
-        <h2>Upload files</h2>
+        <h2 style="color: black;">Upload files 
+          <button style="float: right;" class="btn"><span class="material-symbols-outlined">
+          close
+          </span>
+          </button>
+        </h2>        
         <mat-divider></mat-divider>
         <br><br>
         <div class="wrapper-file-input">
@@ -13,12 +18,20 @@
               Choose File to upload
             </h4>
             <p>
-              <input id="fileInput" type="file" style="display: none;" (change)="onFileSelected($event)">
+              <input id="fileInput" type="file" multiple style="display: none;" (change)="onFileSelected($event)">
             </p>
           </div>
           <p style="text-align: center;">Supported File format: PDF,(Max size 2 MB)</p>
         </div>
-  
+        <br><br>
+        <div class="content row">
+          <div class="col-md-8"></div>
+          <div class="col-md-2"><button type="submit" class="btn btn-primary">upload</button></div>
+          <div class="col-md-2"><button type="button" class="btn" style="border: 1px solid black;">cancel</button></div>
+        </div>
+        
+        
+
         <div class="wrapper-file-section">
           <div class="selected-files" *ngIf="selectedFileNames.length">
             <h5>Selected Files</h5>

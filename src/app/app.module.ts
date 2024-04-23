@@ -20,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     MatDialogModule,
-    FormsModule
+    FormsModule,
     HttpClientModule
   ],
   providers: [],

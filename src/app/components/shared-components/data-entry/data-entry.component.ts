@@ -34,7 +34,6 @@ export class DataEntryComponent{
   }
  
     @Input() title!:string;
-    @Input() toggle :boolean= false;
 
   onClick() {
     this.showTableHeader = !this.showTableHeader;

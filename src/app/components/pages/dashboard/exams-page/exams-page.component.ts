@@ -4,13 +4,14 @@ import { CommonModule } from '@angular/common';
 import { HeaderCompComponent } from '../../../shared-components/header-comp/header-comp.component';
 import { TableComponent } from '../../../shared-components/table/table.component';
 import { CourseService } from 'src/app/services/course.service';
+import { DataEntryComponent } from 'src/app/components/shared-components/data-entry/data-entry.component';
 
 @Component({
   selector: 'app-exams-page',
   standalone: true,
   templateUrl: './exams-page.component.html',
   styleUrls: ['./exams-page.component.scss'],
-  imports: [CommonModule, HeaderCompComponent, TableComponent],
+  imports: [CommonModule, HeaderCompComponent, TableComponent,DataEntryComponent],
 })
 
 export class ExamsPageComponent implements OnInit {
@@ -62,6 +63,11 @@ export class ExamsPageComponent implements OnInit {
       });
     });
     console.log('Courses',this.courses)
+  }
+
+
+  updateToggle(toggle:boolean){
+    this.toggleShow = toggle
   }
 }
 

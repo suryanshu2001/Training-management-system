@@ -15,5 +15,22 @@ import {MatGridListModule} from '@angular/material/grid-list';
   styleUrls: ['./batches.component.scss']
 })
 export class BatchesComponent {
+  selectedBatch: string|undefined;
+  isBatchSelected: boolean = false;
+  selectedDate: string|undefined;
+  isDateSelected: boolean = false;
+  selectedProgram: string | undefined;
+  isProgramSelected: boolean = false;
 
+  onBatchChange() {
+    this.isBatchSelected = !!this.selectedBatch;
+  }
+
+  onDateChange() {
+    this.isDateSelected = !!this.selectedDate;
+  }
+
+  onProgramChange() {
+    this.isProgramSelected = !!this.selectedProgram;
+  }
 }

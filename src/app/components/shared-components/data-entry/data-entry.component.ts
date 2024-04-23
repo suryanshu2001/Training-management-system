@@ -34,6 +34,7 @@ export class DataEntryComponent{
   }
  
     @Input() title!:string;
+    @Input() toggle :boolean= false;
 
   onClick() {
     this.showTableHeader = !this.showTableHeader;
@@ -47,7 +48,6 @@ export class DataEntryComponent{
 
     openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
       this.dialog.open(FileUploadComponent, {
-        // width: '700px',
         height: 'auto',
         enterAnimationDuration,
         exitAnimationDuration,

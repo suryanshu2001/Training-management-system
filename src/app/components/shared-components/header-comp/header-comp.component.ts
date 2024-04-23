@@ -24,34 +24,33 @@ import { OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { CourseService } from 'src/app/services/course.service';
 
-
-
 @Component({
-    selector: 'app-header-comp',
-    standalone: true,
-    templateUrl: './header-comp.component.html',
-    styleUrls: ['./header-comp.component.scss'],
-    imports: [
-        CommonModule,
-        MatIconModule,
-        NgFor,
-        ReactiveFormsModule,
-        AsyncPipe,
-        MatInputModule,
-        MatAutocompleteModule,
-        MatCardModule,
-        MatGridListModule,
-        NgxMatSelectSearchModule,
-        MatSelectModule,
-        MatFormFieldModule,
-        FormsModule,
-    ]
+  selector: 'app-header-comp',
+  standalone: true,
+  templateUrl: './header-comp.component.html',
+  styleUrls: ['./header-comp.component.scss'],
+  imports: [
+    CommonModule,
+    MatIconModule,
+    NgFor,
+    ReactiveFormsModule,
+    AsyncPipe,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatCardModule,
+    MatGridListModule,
+    NgxMatSelectSearchModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    FormsModule,
+  ],
 })
 export class HeaderCompComponent implements OnInit {
   constructor(
     private cdr: ChangeDetectorRef,
     private courseService: CourseService
   ) {}
+  @Input() heading: string = '';
 
   @Input() toggle: boolean = false;
   @Output() newToggle = new EventEmitter<boolean>();
@@ -127,11 +126,9 @@ export class HeaderCompComponent implements OnInit {
     console.log('Courses', this.courses);
   }
 
-
   filteredOptions1: Observable<string[]> | undefined;
   filteredOptions2: Observable<string[]> | undefined;
   filteredOptions3: Observable<string[]> | undefined;
-
 
   ngOnInit() {
     this.courseService.getCourses().subscribe((courses) => {

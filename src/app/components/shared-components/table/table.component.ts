@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -16,5 +16,10 @@ export class TableComponent {
     { student: 'Bob', marks: 75 },
     { student: ' tob', marks: 75 },
     { student: 'dob', marks: 55 },
+    { student: 'paaji', marks: 100 },
   ];
+
+  @Input() visible: boolean=false;
+
+  constructor() { }
 }

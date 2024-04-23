@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
@@ -26,6 +26,8 @@ import { MatDialog } from '@angular/material/dialog';
 
 export class DataEntryComponent{
   showTableHeader = false;
+  @Output() showTable: EventEmitter<void> = new EventEmitter<void>();
+
   formdata={
     examName:'',
     totalMarks:'',
@@ -35,14 +37,14 @@ export class DataEntryComponent{
  
     @Input() title!:string;
 
-  onClick() {
-    this.showTableHeader = !this.showTableHeader;
+  // onClick() {
+  //   this.showTableHeader = !this.showTableHeader;
     
-  }
+  // }
   onSubmit(form:NgForm){
-  }
-  
-  
+  } 
+
+    
   constructor(public dialog: MatDialog) {}
 
     openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
@@ -53,6 +55,9 @@ export class DataEntryComponent{
       });
     }
 
+    toShow(){
+      this.showTable.emit();
+    }
 
   }
 

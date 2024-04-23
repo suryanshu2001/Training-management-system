@@ -1,0 +1,58 @@
+<mat-grid-list cols="4" rowHeight="100px" style="background-color: #ecf4fc;">
+  <mat-grid-tile><mat-form-field>
+    <mat-select placeholder="Batch Code:Batch Name" [(ngModel)]="selectedBatch" (ngModelChange)="onBatchChange()">
+      <mat-option value="1">Bank A</mat-option>
+      <mat-option value="2">Bank B</mat-option>
+      <mat-option value="3">Bank C</mat-option>
+    </mat-select>
+  </mat-form-field></mat-grid-tile>
+  <mat-grid-tile><mat-form-field class="example-full-width">
+    <mat-label>Batch Start Date</mat-label>
+    <input matInput [(ngModel)]="selectedDate" (ngModelChange)="onDateChange()" [disabled]="!isBatchSelected">
+  </mat-form-field></mat-grid-tile>
+  <mat-grid-tile><mat-form-field>
+    <mat-select placeholder="Program Code:Program Name" [(ngModel)]="selectedProgram" (ngModelChange)="onProgramChange()" [disabled]="!isBatchSelected || !isDateSelected">
+      <mat-option value="1">Bank A</mat-option>
+      <mat-option value="2">Bank B</mat-option>
+      <mat-option value="3">Bank C</mat-option>
+    </mat-select>
+  </mat-form-field></mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Topics Completed</th>
+      <th scope="col">Topics in Progress</th>
+      <th scope="col">Course Completion Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>234</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>60%</td>
+    </tr>
+    <tr>
+      <td>235</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>60%</td>
+    </tr>
+    <tr>
+      <td>236</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>60%</td>
+    </tr>
+  </tbody>
+</table>
+
+  

@@ -1,22 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
+export interface user{
+  email: string,
+  userName: string,
+  password: string
+}
 
+export interface Course {
+  BatchName: string;
+  programs: Program[];
+}
 
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
-})
-export class DataModelModule {
-    email!: string
-    password!: string
-    userLogedin!: boolean
-
-    constructor() {
-        this.email = ''
-        this.password = ''
-        this.userLogedin = false
-    }
- }
+export interface Program {
+  [programName: string]: string[];
+}

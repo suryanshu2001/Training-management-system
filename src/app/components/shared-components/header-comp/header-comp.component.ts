@@ -5,6 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -20,28 +21,31 @@ import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
+
+
 @Component({
-  selector: 'app-header-comp',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatIconModule,
-    NgFor,
-    ReactiveFormsModule,
-    AsyncPipe,
-    MatInputModule,
-    MatAutocompleteModule,
-    MatCardModule,
-    MatGridListModule,
-    NgxMatSelectSearchModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    FormsModule,
-  ],
-  templateUrl: './header-comp.component.html',
-  styleUrls: ['./header-comp.component.scss'],
+    selector: 'app-header-comp',
+    standalone: true,
+    templateUrl: './header-comp.component.html',
+    styleUrls: ['./header-comp.component.scss'],
+    imports: [
+        CommonModule,
+        MatIconModule,
+        NgFor,
+        ReactiveFormsModule,
+        AsyncPipe,
+        MatInputModule,
+        MatAutocompleteModule,
+        MatCardModule,
+        MatGridListModule,
+        NgxMatSelectSearchModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        FormsModule,
+    ]
 })
 export class HeaderCompComponent implements OnInit {
+
   constructor(private cdr: ChangeDetectorRef) {}
   @Input() toggle: boolean = false;
   @Output() newToggle = new EventEmitter<boolean>();
@@ -69,31 +73,11 @@ export class HeaderCompComponent implements OnInit {
     });
   }
 
-  options1: string[] = [
-    'Batch 1K2125:No.1',
-    'Batch 4D4127:No.2',
-    'Batch 12F4155:No.3',
-    'Batch 5A2463:No.4',
-  ];
-
-  options2: string[] = [
-    'Program 1D2125:data science',
-    'Program 1f215 :web development',
-    'Program 2E218 :mysql',
-    'Program 2E2124 :php',
-    'Program 3F2126 :bi',
-  ];
-
-  options3: string[] = [
-    'course 1c4575:php basics',
-    'course 4D124:xml',
-    'course 5a7845:error handling',
-    'course 2z1247 :data visualization',
-  ];
-
+ 
   filteredOptions1: Observable<string[]> | undefined;
   filteredOptions2: Observable<string[]> | undefined;
   filteredOptions3: Observable<string[]> | undefined;
+
 
   ngOnInit() {
     this.updateDynamicTitles();

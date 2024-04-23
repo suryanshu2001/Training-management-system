@@ -1,0 +1,38 @@
+<!-- <button mat-raised-button (click)="openDialog('0ms', '0ms')">Open dialog without animation</button> -->
+<!-- Angular HTML template -->
+<div id="app">
+    <div class="container">
+      <div class="file-input-box">
+        <mat-divider></mat-divider>
+        <div class="wrapper-file-input">
+          <div class="input-box" (click)="openFileInput()">
+            <h4>
+              <i class="fa-solid fa-upload"></i>
+              Choose File to upload
+            </h4>
+           <p>
+            resdtcfyvguhijfh
+            <input #fileInput type="file" hidden (change)="handleFileChange($event)" multiple />
+           </p>
+          </div>
+          <p style="text-align: center;">Supported File format: PDF,(Max size 2 MB)</p>
+        </div>
+  
+        <div class="wrapper-file-section">
+          <div class="selected-files" *ngIf="selectedFileNames.length">
+            <h5>Selected Files</h5>
+            <ul class="file-list" [style]="selectedFileNames.length ? 'max-height:220px' : 'height:auto'">
+                <li *ngFor="let f of selectedFileNames; let index = index; trackBy: trackByFn" class="item">
+                  <span class="name">{{ f.name }} ({{ formatFileSize(f.size) }})</span>
+                  <div class="remove" (click)="removeFile(index)">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </div>
+                </li>
+              </ul>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

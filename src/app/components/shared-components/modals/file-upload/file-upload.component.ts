@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatDialog,
@@ -27,7 +27,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./file-upload.component.scss']
 })
 export class FileUploadComponent {
-
+  
   trackByFn(index: number, item: any) {
     return index; // or item.id if you have unique identifiers
   }
@@ -39,19 +39,26 @@ export class FileUploadComponent {
   openFileInput() {
     const fileInput = document.getElementById('fileInput') as HTMLInputElement;
     fileInput.click();
+    console.log('file open')
+  }
+  
+  onFileSelected(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const files = inputElement.files;
+    // Do something with the selected file(s)
   }
 
-  handleFileChange(event: Event) {
-    const fileList = (event.target as HTMLInputElement).files;
-    if (fileList) {
-      for (let i = 0; i < fileList.length; i++) {
-        this.selectedFileNames.push({
-          name: fileList[i].name,
-          size: fileList[i].size
-        });
-      }
-    }
-  }
+  // handleFileChange(event: Event) {
+  //   const fileList = (event.target as HTMLInputElement).files;
+  //   if (fileList) {
+  //     for (let i = 0; i < fileList.length; i++) {
+  //       this.selectedFileNames.push({
+  //         name: fileList[i].name,
+  //         size: fileList[i].size
+  //       });
+  //     }
+  //   }
+  // }
 
   formatFileSize(size: number): string {
     const units = ['B', 'KB', 'MB', 'GB'];

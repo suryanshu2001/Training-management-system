@@ -193,5 +193,5 @@ export class HeaderCompComponent implements OnInit {
     this.newToggle.emit(this.toggle);
     this.cdr.detectChanges();
     console.log(this.toggle);
-  }
+  }
 }

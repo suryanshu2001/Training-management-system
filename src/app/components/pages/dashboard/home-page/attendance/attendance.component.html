@@ -1,0 +1,124 @@
+ <mat-grid-list cols="4" rowHeight="100px" style="background-color: #ecf4fc;">
+        <mat-grid-tile><mat-form-field>
+          <mat-select placeholder="Batch Code:Batch Name">
+            <mat-option value="1">Bank A</mat-option>
+            <mat-option value="2">Bank B</mat-option>
+            <mat-option value="3">Bank C</mat-option>
+          </mat-select>
+        </mat-form-field></mat-grid-tile>
+        <mat-grid-tile><mat-form-field class="example-full-width">
+          <mat-label>Batch Start Date</mat-label>
+          <input matInput>
+        </mat-form-field></mat-grid-tile>
+        <mat-grid-tile><mat-form-field>
+          <mat-select placeholder="Program Code:Program Name">
+            <mat-option value="1">Bank A</mat-option>
+            <mat-option value="2">Bank B</mat-option>
+            <mat-option value="3">Bank C</mat-option>
+          </mat-select>
+        </mat-form-field></mat-grid-tile>
+        <mat-grid-tile><mat-form-field>
+          <mat-select placeholder="Course Code:Course Name">
+            <mat-option value="1">Bank A</mat-option>
+            <mat-option value="2">Bank B</mat-option>
+            <mat-option value="3">Bank C</mat-option>
+          </mat-select>
+        </mat-form-field></mat-grid-tile>
+        
+      </mat-grid-list>
+
+      <mat-grid-list cols="4" rowHeight="100px" >
+        
+        <mat-grid-tile>
+          <mat-form-field style="margin-left: -80px;">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+        </mat-grid-tile>
+        <mat-grid-tile> 
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-stroked-button style="display: flex; justify-content: flex-end;">Add Topic</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      
+      <table class="table table-striped">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">Actions</th>
+            <th scope="col">
+              Topic Name
+              <span>
+                
+                <mat-icon>arrow_upward</mat-icon>
+                <mat-icon>arrow_downward</mat-icon>
+              </span>
+            </th>
+            <th scope="col">Topic Percentage Completion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><button mat-icon-button>
+              <mat-icon>edit_outline</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>delete_outline</mat-icon></button></th>
+            <td>Mark</td>
+            <td>Otto</td>
+            
+          </tr>
+          <tr>
+            <th scope="row"><button mat-icon-button>
+              <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>delete_outline</mat-icon></button></th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+          
+          </tr>
+          <tr>
+            <th scope="row"><button mat-icon-button>
+              <mat-icon>edit_outline</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>delete_outline</mat-icon></button></th>
+            <td>Larry</td>
+            <td>the Bird</td>
+          
+          </tr>
+        </tbody>
+      </table>
+
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Student Name</th>
+            <th scope="col">Attendance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>All Students</td>
+            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
+          </tr>
+          
+          <tr>
+            <td>Marie</td>
+            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
+          </tr>
+
+          <tr>
+            <td>Jacob</td>
+            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
+          </tr>
+        </tbody>
+      </table>
+      

@@ -1,1 +1,36 @@
-<p>home-page works!</p>
+<div style="background-color: #ecf4fc; height: 100%;">
+  <p>Home</p>
+
+  <div class="container mt-2">
+    <div>
+       
+    </div>
+    <div class="card">
+        <div class="card-body">
+          <div>
+            <div class="container">
+              <div style="margin-left: -12px;" class="mt-2">
+                <button type="button" class="btn btn-link" style="text-decoration: none;" [style.color]="tabName === 'batchProgram' ? 'black' : 'grey'" (click)="onToggle('batchProgram')">Batches & Programs</button>
+                <button type="button" class="btn btn-link" style="text-decoration: none;" [style.color]="tabName === 'attendance' ? 'black' : 'grey'" (click)="onToggle('attendance')">Attendance</button>                
+              </div>
+              <hr/>
+              <div class="mb-2"><strong>Please select the options below to get the results</strong></div>
+              <div *ngIf="tabName == 'batchProgram'" >
+                <app-batches></app-batches>  
+              </div>
+              <div *ngIf="tabName == 'attendance'" >
+                <app-attendance></app-attendance>
+              </div>
+              <div *ngIf="tabName == 'batchProgram'">
+               
+              </div>
+              <div *ngIf="tabName == 'attendance'">
+               
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+  </div>
+</div>

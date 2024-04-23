@@ -9,7 +9,8 @@
     {
       "BatchName":"Batch 1K2125:No.1",
       "programs":[{
-        "Program 1D2125:data science":[
+       "ProgramName":"Program 1D2125:data science",
+       "Courses":[
           "Course 1D2125:data science",
           "Course 2D2125:data science",
           "Course 3D2125:data science",
@@ -25,7 +26,9 @@
           "Course 13D2125:data science"
         ]
       },
-       { "Program 1f215 :web development":[
+       {
+        "ProgramName": "Program 1f215 :web development",
+        "Courses":[
         "Course 1F215:web development",
         "Course 2F215:web development",
         "Course 3F215:web development",
@@ -41,7 +44,9 @@
         "Course 13F215:web development",
         "Course 14F215:web development"
        ]},
-        {"Program 2E218 :mysql":[
+        {
+          "ProgramName":"Program 2E218 :mysql",
+          "Courses":[
           "Course 1E218:mysql",
           "Course 2E218:mysql",
           "Course 3E218:mysql",
@@ -58,7 +63,9 @@
           "Course 14E218:mysql",
           "Course 15E218:mysql"
         ]},
-        {"Program 2E2124 :php":[
+        {
+          "ProgramName":"Program 2E2124 :php",
+          "Courses":[
           "Course 1E2124:php",
           "Course 2E2124:php",
           "Course 3E2124:php",
@@ -79,7 +86,8 @@
     {
       "BatchName":"Batch 2K3456:No.2",
       "programs":[{
-         "Program 1B3456:artificial intelligence":[
+        "ProgramName":"Program 1B3456:artificial intelligence",
+        "Courses":[
             "Course 1B3456:artificial intelligence",
             "Course 2B3456:artificial intelligence",
             "Course 3B3456:artificial intelligence",
@@ -93,7 +101,8 @@
          ]
       },
       {
-         "Program 1C3456:machine learning":[
+        "ProgramName":"Program 1C3456:machine learning",
+        "Courses":[
             "Course 1C3456:machine learning",
             "Course 2C3456:machine learning",
             "Course 3C3456:machine learning",
@@ -110,7 +119,8 @@
    {
     "BatchName":"Batch 3M7890:No.3",
     "programs":[{
-       "Program 1P7890:cybersecurity":[
+      "ProgramName":"Program 1P7890:cybersecurity",
+      "Courses":[
           "Course 1P7890:cybersecurity",
           "Course 2P7890:cybersecurity",
           "Course 3P7890:cybersecurity",
@@ -124,7 +134,8 @@
        ]
     },
     {
-       "Program 1Q7890:networking":[
+      "ProgramName":"Program 1Q7890:networking",
+      "Courses":[
           "Course 1Q7890:networking",
           "Course 2Q7890:networking",
           "Course 3Q7890:networking",
@@ -141,7 +152,8 @@
  {
   "BatchName":"Batch 4T1234:No.4",
   "programs":[{
-     "Program 1U1234:frontend development":[
+    "ProgramName":"Program 1U1234:frontend development",
+    "Courses":[
         "Course 1U1234:frontend development",
         "Course 2U1234:frontend development",
         "Course 3U1234:frontend development",
@@ -155,7 +167,8 @@
      ]
   },
   {
-     "Program 1V1234:backend development":[
+    "ProgramName":"Program 1V1234:backend development",
+    "Courses":[
         "Course 1V1234:backend development",
         "Course 2V1234:backend development",
         "Course 3V1234:backend development",
@@ -172,7 +185,8 @@
 {
   "BatchName":"Batch 5A5678:No.5",
   "programs":[{
-     "Program 1C5678:graphic design":[
+    "ProgramName":"Program 1C5678:graphic design",
+    "Courses":[
         "Course 1C5678:graphic design",
         "Course 2C5678:graphic design",
         "Course 3C5678:graphic design",
@@ -186,7 +200,8 @@
      ]
   },
   {
-     "Program 1D5678:animation":[
+    "ProgramName":"Program 1D5678:animation",
+    "Courses":[
         "Course 1D5678:animation",
         "Course 2D5678:animation",
         "Course 3D5678:animation",
@@ -203,7 +218,8 @@
 {
   "BatchName":"Batch 6H9012:No.6",
   "programs":[{
-     "Program 1J9012:android development":[
+    "ProgramName":"Program 1J9012:android development",
+    "Courses":[
         "Course 1J9012:android development",
         "Course 2J9012:android development",
         "Course 3J9012:android development",
@@ -217,7 +233,8 @@
      ]
   },
   {
-     "Program 1K9012:ios development":[
+    "ProgramName":"Program 1K9012:ios development",
+    "Courses":[
         "Course 1K9012:ios development",
         "Course 2K9012:ios development",
         "Course 3K9012:ios development",

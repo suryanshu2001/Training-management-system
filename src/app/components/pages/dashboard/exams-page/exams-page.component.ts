@@ -12,6 +12,7 @@ import { CourseService } from 'src/app/services/course.service';
   styleUrls: ['./exams-page.component.scss'],
   imports: [CommonModule, HeaderCompComponent, TableComponent],
 })
+
 export class ExamsPageComponent implements OnInit {
   constructor(private courseService: CourseService) { }
   batchNames: string[] = []

@@ -30,31 +30,22 @@
       <br />
       <div class="row justify-content-center">
         <div class="col-md-3 col-sm-12">
-          <!-- <mat-form-field appearance="fill">
-            <mat-label>Batch Code:Batch Name</mat-label>
-            <mat-select>
-              <ngx-mat-select-search></ngx-mat-select-search>
-              <mat-option value="1">Batch 1K2125:No.1</mat-option>
-              <mat-option value="2">Batch 4D4127:No.2</mat-option>
-              <mat-option value="3">Batch 12F4155:No.3</mat-option>
-              <mat-option value="4">Batch 5A2463:No.4</mat-option>
-            </mat-select>
-          </mat-form-field> -->
-
           <form class="example-form">
             <mat-form-field class="example-full-width">
-              <mat-label>Number</mat-label>
+              <!-- <mat-label>Batch Code:Batch Name</mat-label> -->
+              <mat-label>{{ batchCodeLabel }}</mat-label>
+
               <input
                 type="text"
                 placeholder="Pick one"
                 aria-label="Number"
                 matInput
-                [formControl]="myControl"
-                [matAutocomplete]="auto"
+                [formControl]="myControl1"
+                [matAutocomplete]="auto1"
               />
-              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
                 <mat-option
-                  *ngFor="let option of filteredOptions | async"
+                  *ngFor="let option of filteredOptions1 | async"
                   [value]="option"
                 >
                   {{ option }}
@@ -64,37 +55,26 @@
           </form>
         </div>
         <div class="col-md-2 col-sm-12">
-          <!-- <input
-            type="text"
-            id="username"
-            name="username"
-            class="form-control"
-            style="height: 40px"
-            placeholder="Username"
-          /><br /> -->
-
           <mat-form-field class="example-full-width">
             <input matInput disabled value=" Batch date" />
           </mat-form-field>
         </div>
 
         <div class="col-md-3 col-sm-12">
-          <!-- <select class="form-select" aria-label="Select option"></select> -->
-
           <form class="example-form">
             <mat-form-field class="example-full-width">
-              <mat-label>Number</mat-label>
+              <mat-label>{{ programCodeLabel }}</mat-label>
               <input
                 type="text"
                 placeholder="Pick one"
                 aria-label="Number"
                 matInput
-                [formControl]="myControl"
-                [matAutocomplete]="auto"
+                [formControl]="myControl2"
+                [matAutocomplete]="auto2"
               />
-              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete">
                 <mat-option
-                  *ngFor="let option of filteredOptions | async"
+                  *ngFor="let option of filteredOptions2 | async"
                   [value]="option"
                 >
                   {{ option }}
@@ -104,26 +84,21 @@
           </form>
         </div>
         <div class="col-md-3 col-sm-12">
-          <!-- <select class="form-select" aria-label="Select option"> -->
-          <!-- <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option> -->
-
           <form class="example-form">
             <mat-form-field class="example-full-width">
-              <mat-label>Number</mat-label>
+              <mat-label>{{ courseCodeLabel }}</mat-label>
+
               <input
                 type="text"
                 placeholder="Pick one"
                 aria-label="Number"
                 matInput
-                [formControl]="myControl"
-                [matAutocomplete]="auto"
+                [formControl]="myControl3"
+                [matAutocomplete]="auto3"
               />
-              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-autocomplete autoActiveFirstOption #auto3="matAutocomplete">
                 <mat-option
-                  *ngFor="let option of filteredOptions | async"
+                  *ngFor="let option of filteredOptions3 | async"
                   [value]="option"
                 >
                   {{ option }}
@@ -131,21 +106,6 @@
               </mat-autocomplete>
             </mat-form-field>
           </form>
-
-          <!-- </select> -->
-
-          <!-- <div class="card flex justify-content-center">
-            <p-autoComplete
-              [(ngModel)]="selectedItem"
-              [virtualScroll]="true"
-              [suggestions]="filteredItems"
-              [virtualScrollItemSize]="34"
-              (completeMethod)="filterItems($event)"
-              field="label"
-              [dropdown]="true"
-            >
-            </p-autoComplete>
-          </div> -->
         </div>
       </div>
     </div>
@@ -154,7 +114,10 @@
         <button
           type="button"
           class="btn btn-light"
-          style="margin-left: 1150px; margin-bottom: 30px">
+          style="margin-left: 1150px; margin-bottom: 30px"
+          [disabled]="!myControl3.value"
+          (click)="onCreateExam()"
+        >
           Create exam
         </button>
       </div>

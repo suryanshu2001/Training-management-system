@@ -1,39 +1,38 @@
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th style="padding-left: 150px">Student</th>
-      <th>Marks</th>
-      <div>
-        <th style="color: blue">cancel</th>
-        <th>
-          <button type="button" class="btn btn-light">Create exam</button>
-        </th>
-      </div>
+      <th style="padding-left: 100px" class="student-header">Student</th>
+      <th class="marks-header">Marks</th>
+      <th
+        class="action-header"
+        colspan="2"
+        style="padding-right: 50px; text-align: right"
+      >
+        <button
+          type="button"
+          class="btn btn-light cancel-btn"
+          style="color: rgb(48, 95, 214)"
+        >
+          Cancel
+        </button>
+        <button type="button" class="btn btn-light">Save & close</button>
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let record of studentMarks">
-      <div>
-        <td style="padding-left: 150px">{{ record.student }}</td>
-      </div>
-      <td>{{ record.marks }}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td style="padding-left: 100px" class="student-column">
+        {{ record.student }}
+      </td>
+      <td class="marks-column">
+        <div class="marks-container">
+          <div class="marks-input">
+            <input type="text" style="width: 75px" [(ngModel)]="record.marks" />
+          </div>
+        </div>
+      </td>
+      <td class="action-column"></td>
+      <td class="action-column"></td>
     </tr>
   </tbody>
 </table>

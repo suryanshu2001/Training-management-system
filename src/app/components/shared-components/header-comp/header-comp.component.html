@@ -1,125 +1,112 @@
-<div
-  class="container-fluid"
-  style="background-color: #ecf4fc; height: 100%; font-size: 18px"
->
-  <div class="row" style="padding-top: 50px; padding-left: 110px">
-    <div class="col-12">
-      <b>{{heading}} ></b>
+<div>
+  <div class="row" style="background-color: #ecf4fc; margin: 20px">
+    <div class="col-md-5 col-sm-12">
+      <div
+        style="
+          font-weight: 800;
+          margin-top: 35px;
+          margin-left: 60px;
+          margin-bottom: 20px;
+        "
+      >
+        Please select the options below to get the results
+      </div>
+    </div>
+
+    <div class="col-md-7 col-sm-12"></div>
+    <br />
+    <div class="row justify-content-center">
+      <div class="col-md-3 col-sm-12">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <!-- <mat-label>Batch Code:Batch Name</mat-label> -->
+            <mat-label>{{ batchCodeLabel }}</mat-label>
+
+            <input
+              type="text"
+              placeholder="Pick one"
+              aria-label="Number"
+              matInput
+              [formControl]="myControl1"
+              [matAutocomplete]="auto1"
+            />
+            <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+              <mat-option
+                *ngFor="let option of filteredOptions1 | async"
+                [value]="option"
+              >
+                {{ option }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="col-md-2 col-sm-12">
+        <mat-form-field class="example-full-width">
+          <input matInput disabled value=" Batch date" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-3 col-sm-12">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ programCodeLabel }}</mat-label>
+            <input
+              type="text"
+              placeholder="Pick one"
+              aria-label="Number"
+              matInput
+              [formControl]="myControl2"
+              [matAutocomplete]="auto2"
+            />
+            <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete">
+              <mat-option
+                *ngFor="let option of filteredOptions2 | async"
+                [value]="option"
+              >
+                {{ option }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="col-md-3 col-sm-12">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ courseCodeLabel }}</mat-label>
+
+            <input
+              type="text"
+              placeholder="Pick one"
+              aria-label="Number"
+              matInput
+              [formControl]="myControl3"
+              [matAutocomplete]="auto3"
+            />
+            <mat-autocomplete autoActiveFirstOption #auto3="matAutocomplete">
+              <mat-option
+                *ngFor="let option of filteredOptions3 | async"
+                [value]="option"
+              >
+                {{ option }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
+      </div>
     </div>
   </div>
-
-  <div
-    class="container"
-    style="background-color: white; margin-top: 60px; padding-top: 20px">
-    <div class="row" style="background-color: #ecf4fc; margin: 20px">
-      <div class="col-md-5 col-sm-12">
-        <div
-          style="
-            font-weight: 800;
-            margin-top: 35px;
-            margin-left: 60px;
-            margin-bottom: 20px;
-          "
-        >
-          Please select the options below to get the results
-        </div>
-      </div>
-
-      <div class="col-md-7 col-sm-12"></div>
-      <br />
-      <div class="row justify-content-center">
-        <div class="col-md-3 col-sm-12">
-          <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <!-- <mat-label>Batch Code:Batch Name</mat-label> -->
-              <mat-label>{{ batchCodeLabel }}</mat-label>
-
-              <input
-                type="text"
-                placeholder="Pick one"
-                aria-label="Number"
-                matInput
-                [formControl]="myControl1"
-                [matAutocomplete]="auto1"
-              />
-              <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
-                <mat-option
-                  *ngFor="let option of filteredOptions1 | async"
-                  [value]="option"
-                >
-                  {{ option }}
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
-          </form>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <mat-form-field class="example-full-width">
-            <input matInput disabled value=" Batch date" />
-          </mat-form-field>
-        </div>
-
-        <div class="col-md-3 col-sm-12">
-          <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <mat-label>{{ programCodeLabel }}</mat-label>
-              <input
-                type="text"
-                placeholder="Pick one"
-                aria-label="Number"
-                matInput
-                [formControl]="myControl2"
-                [matAutocomplete]="auto2"
-              />
-              <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete">
-                <mat-option
-                  *ngFor="let option of filteredOptions2 | async"
-                  [value]="option"
-                >
-                  {{ option }}
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
-          </form>
-        </div>
-        <div class="col-md-3 col-sm-12">
-          <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <mat-label>{{ courseCodeLabel }}</mat-label>
-
-              <input
-                type="text"
-                placeholder="Pick one"
-                aria-label="Number"
-                matInput
-                [formControl]="myControl3"
-                [matAutocomplete]="auto3"
-              />
-              <mat-autocomplete autoActiveFirstOption #auto3="matAutocomplete">
-                <mat-option
-                  *ngFor="let option of filteredOptions3 | async"
-                  [value]="option"
-                >
-                  {{ option }}
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="row d-flex align-self-end">
-      <div class="col-12">
-        <button
-          type="button"
-          class="btn btn-light"
-          style="margin-left: 1150px; margin-bottom: 30px"
-          [disabled]="!myControl3.value"
-          (click)="onCreateExam()"
-        >
-          Create exam
-        </button>
-      </div>
+  <div class="row d-flex align-self-end">
+    <div class="col-12 d-flex justify-content-end">
+      <button
+        type="button"
+        class="btn btn-light"
+        style="margin-bottom: 30px"
+        [disabled]="!myControl3.value"
+        (click)="onCreateExam()"
+      >
+        Create exam
+      </button>
     </div>
   </div>
 </div>

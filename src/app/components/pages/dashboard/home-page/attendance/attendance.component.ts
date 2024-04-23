@@ -19,8 +19,33 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class AttendanceComponent {
   startDate = new Date(1990, 0, 1);
+  selectedBatch: string | undefined;
+  selectedDate: string | undefined;
+  selectedProgram: string | undefined;
+  selectedCourse: string | undefined;
+  selectedAttendance: string | undefined;
+  isDateSelected: boolean = false;
+  isBatchSelected: boolean = false;
+  isProgramSelected: boolean = false;
+  isCourseSelected: boolean = false;
+  isAttendanceSelected: boolean = false;
+
+  onBatchChange() {
+    this.isBatchSelected = !!this.selectedBatch;
+  }
+  onDateChange(){
+    this.isDateSelected = !!this.selectedDate;
+  }
+  onProgramChange(){
+    this.isProgramSelected = !!this.selectedProgram;
+  }
+  onCourseChange(){
+    this.isCourseSelected = !!this.selectedCourse;
+  }
+  onAttendanceChange(){
+    this.isAttendanceSelected = !!this.selectedAttendance;
+  }
   sortTopicName() {
-    // Add your sorting logic here for Topic Name
     console.log('Sorting by Topic Name');
   }
 }

@@ -1,5 +1,35 @@
-<app-header-comp [heading]="'Exams'" [toggle]="toggleShow" (toggleChange)="updateToggle($event)"></app-header-comp>
-<div *ngIf="toggleShow">
+
+<!-- <app-table></app-table> -->
+<div
+  class="container-fluid"
+  style="background-color: #ecf4fc; height: 100%; font-size: 18px"
+>
+  <div class="row" style="padding-top: 40px; padding-left: 90px">
+    <div
+      class="col-12"
+      style="color: rgb(85, 80, 80); display: flex; align-items: center"
+    >
+      Exams
+      <span
+        class="material-symbols-outlined"
+        style="margin-top: 2px; margin-left: 5px"
+      >
+        chevron_right
+      </span>
+    </div>
+  </div>
+
+  <div
+    class="container"
+    style="background-color: white; margin-top: 60px; padding-top: 20px"
+  >
+    <app-header-comp
+      [heading]="'Exams'"
+      [toggle]="toggleShow"
+    ></app-header-comp>
+    <div *ngIf="toggleShow">
     <app-data-entry [title]="'Exam-name'"></app-data-entry>
 </div>
 <app-table></app-table>
+  </div>
+</div>

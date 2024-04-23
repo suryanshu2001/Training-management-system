@@ -11,10 +11,10 @@
           <div>
             <div class="container">
               <div style="margin-left: -12px;" class="mt-2">
-                <button type="button" class="btn btn-link" style="text-decoration: none;" [style.color]="tabName === 'batchProgram' ? 'black' : 'grey'" (click)="onToggle('batchProgram')">Batches & Programs</button>
-                <button type="button" class="btn btn-link" style="text-decoration: none;" [style.color]="tabName === 'attendance' ? 'black' : 'grey'" (click)="onToggle('attendance')">Attendance</button>                
+                <button type="button" class="btn btn-link" style="text-decoration: none;border-radius: 0" [style.color]="tabName === 'batchProgram' ? 'black' : 'grey'" [style.border-bottom]="tabName === 'batchProgram' ? '3px solid blue' : ''" (click)="onToggle('batchProgram')">Batches & Programs</button>
+                <button type="button" class="btn btn-link" style="text-decoration: none;border-radius: 0" [style.color]="tabName === 'attendance' ? 'black' : 'grey'" [style.border-bottom]="tabName === 'attendance' ? '3px solid blue' : ''" (click)="onToggle('attendance')">Attendance</button>                
               </div>
-              <hr/>
+             <hr style="z-index: -1;margin-top: -2px;"/>
               <div class="mb-2"><strong>Please select the options below to get the results</strong></div>
               <div *ngIf="tabName == 'batchProgram'" >
                 <app-batches></app-batches>  

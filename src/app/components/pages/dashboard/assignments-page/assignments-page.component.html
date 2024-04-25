@@ -1,2 +1,10 @@
-<app-header-comp [heading]="'Assignments'"></app-header-comp>
-<app-data-entry [title]="'Assignments'"></app-data-entry>
+<!-- <app-header-comp [heading]="'Exams'"></app-header-comp>
+<div *ngIf="toggleShow">
+    <app-data-entry [title]="'Assignments'"></app-data-entry>
+</div> -->
+
+<app-header-comp [heading]="'Assignments'" [toggle]="toggleShow" (toggleChange)="updateToggle($event)"></app-header-comp>
+<div *ngIf="toggleShow">
+    <app-data-entry [title]="'Assignment'"></app-data-entry>
+</div>
+<app-table></app-table>

@@ -1,12 +1,8 @@
 <div class="container-fluid vh-100 page" style="background-color: rgb(240, 244, 252);">
     <br><br>
-    <div class="table-responsive" style=" overflow:hidden">
-        
-        <div class="example-button-row" style="float: right;">
-            <button mat-stroked-button (click)="onClick()" style="color: grey;margin-left: 1150px; margin-bottom: 30px">Create Exam</button>
-        </div>
+    <div class="table-responsive" style=" overflow:hidden; background-color:white;">
         <form class="form" (ngSubmit)="onSubmit(examForm)" #examForm="ngForm" novalidate>
-            <table class="w-100" *ngIf="showTableHeader">
+            <table class="w-100">
                 <tr>
                     <th scope="col" class="text-center">Actions</th>
                     <th scope="col" class="text-center">

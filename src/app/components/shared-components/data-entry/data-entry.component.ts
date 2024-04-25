@@ -47,7 +47,6 @@ export class DataEntryComponent{
 
     openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
       this.dialog.open(FileUploadComponent, {
-        // width: '700px',
         height: 'auto',
         enterAnimationDuration,
         exitAnimationDuration,

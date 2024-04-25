@@ -1,0 +1,282 @@
+{
+  "users": [
+    {
+      "userName": "John",
+      "email": "john2001@gmail.com",
+      "password": "1234"
+    },
+    {
+      "userName": "Rayan",
+      "email": "rayan2001@gmail.com",
+      "password": "1234"
+    },
+    {
+      "userName": "Vimal",
+      "email": "vimal2001@gmail.com",
+      "password": "1234"
+    },
+    {
+      "userName": "Keshab",
+      "email": "keshab2001@gmail.com",
+      "password": "1234"
+    }
+  ],
+  "courses": [
+    {
+      "BatchName": "Batch 1K2125:No.1",
+      "programs": [
+        {
+          "ProgramName": "Program 1D2125:data science",
+          "Courses": [
+            "Course 1D2125:data science",
+            "Course 2D2125:data science",
+            "Course 3D2125:data science",
+            "Course 4D2125:data science",
+            "Course 5D2125:data science",
+            "Course 6D2125:data science",
+            "Course 7D2125:data science",
+            "Course 8D2125:data science",
+            "Course 9D2125:data science",
+            "Course 10D2125:data science",
+            "Course 11D2125:data science",
+            "Course 12D2125:data science",
+            "Course 13D2125:data science"
+          ]
+        },
+        {
+          "ProgramName": "Program 1f215 :web development",
+          "Courses": [
+            "Course 1F215:web development",
+            "Course 2F215:web development",
+            "Course 3F215:web development",
+            "Course 4F215:web development",
+            "Course 5F215:web development",
+            "Course 6F215:web development",
+            "Course 7F215:web development",
+            "Course 8F215:web development",
+            "Course 9F215:web development",
+            "Course 10F215:web development",
+            "Course 11F215:web development",
+            "Course 12F215:web development",
+            "Course 13F215:web development",
+            "Course 14F215:web development"
+          ]
+        },
+        {
+          "ProgramName": "Program 2E218 :mysql",
+          "Courses": [
+            "Course 1E218:mysql",
+            "Course 2E218:mysql",
+            "Course 3E218:mysql",
+            "Course 4E218:mysql",
+            "Course 5E218:mysql",
+            "Course 6E218:mysql",
+            "Course 7E218:mysql",
+            "Course 8E218:mysql",
+            "Course 9E218:mysql",
+            "Course 10E218:mysql",
+            "Course 11E218:mysql",
+            "Course 12E218:mysql",
+            "Course 13E218:mysql",
+            "Course 14E218:mysql",
+            "Course 15E218:mysql"
+          ]
+        },
+        {
+          "ProgramName": "Program 2E2124 :php",
+          "Courses": [
+            "Course 1E2124:php",
+            "Course 2E2124:php",
+            "Course 3E2124:php",
+            "Course 4E2124:php",
+            "Course 5E2124:php",
+            "Course 6E2124:php",
+            "Course 7E2124:php",
+            "Course 8E2124:php",
+            "Course 9E2124:php",
+            "Course 10E2124:php",
+            "Course 11E2124:php",
+            "Course 12E2124:php",
+            "Course 13E2124:php",
+            "Course 14E2124:php"
+          ]
+        }
+      ]
+    },
+    {
+      "BatchName": "Batch 2K3456:No.2",
+      "programs": [
+        {
+          "ProgramName": "Program 1B3456:artificial intelligence",
+          "Courses": [
+            "Course 1B3456:artificial intelligence",
+            "Course 2B3456:artificial intelligence",
+            "Course 3B3456:artificial intelligence",
+            "Course 4B3456:artificial intelligence",
+            "Course 5B3456:artificial intelligence",
+            "Course 6B3456:artificial intelligence",
+            "Course 7B3456:artificial intelligence",
+            "Course 8B3456:artificial intelligence",
+            "Course 9B3456:artificial intelligence",
+            "Course 10B3456:artificial intelligence"
+          ]
+        },
+        {
+          "ProgramName": "Program 1C3456:machine learning",
+          "Courses": [
+            "Course 1C3456:machine learning",
+            "Course 2C3456:machine learning",
+            "Course 3C3456:machine learning",
+            "Course 4C3456:machine learning",
+            "Course 5C3456:machine learning",
+            "Course 6C3456:machine learning",
+            "Course 7C3456:machine learning",
+            "Course 8C3456:machine learning",
+            "Course 9C3456:machine learning",
+            "Course 10C3456:machine learning"
+          ]
+        }
+      ]
+    },
+    {
+      "BatchName": "Batch 3M7890:No.3",
+      "programs": [
+        {
+          "ProgramName": "Program 1P7890:cybersecurity",
+          "Courses": [
+            "Course 1P7890:cybersecurity",
+            "Course 2P7890:cybersecurity",
+            "Course 3P7890:cybersecurity",
+            "Course 4P7890:cybersecurity",
+            "Course 5P7890:cybersecurity",
+            "Course 6P7890:cybersecurity",
+            "Course 7P7890:cybersecurity",
+            "Course 8P7890:cybersecurity",
+            "Course 9P7890:cybersecurity",
+            "Course 10P7890:cybersecurity"
+          ]
+        },
+        {
+          "ProgramName": "Program 1Q7890:networking",
+          "Courses": [
+            "Course 1Q7890:networking",
+            "Course 2Q7890:networking",
+            "Course 3Q7890:networking",
+            "Course 4Q7890:networking",
+            "Course 5Q7890:networking",
+            "Course 6Q7890:networking",
+            "Course 7Q7890:networking",
+            "Course 8Q7890:networking",
+            "Course 9Q7890:networking",
+            "Course 10Q7890:networking"
+          ]
+        }
+      ]
+    },
+    {
+      "BatchName": "Batch 4T1234:No.4",
+      "programs": [
+        {
+          "ProgramName": "Program 1U1234:frontend development",
+          "Courses": [
+            "Course 1U1234:frontend development",
+            "Course 2U1234:frontend development",
+            "Course 3U1234:frontend development",
+            "Course 4U1234:frontend development",
+            "Course 5U1234:frontend development",
+            "Course 6U1234:frontend development",
+            "Course 7U1234:frontend development",
+            "Course 8U1234:frontend development",
+            "Course 9U1234:frontend development",
+            "Course 10U1234:frontend development"
+          ]
+        },
+        {
+          "ProgramName": "Program 1V1234:backend development",
+          "Courses": [
+            "Course 1V1234:backend development",
+            "Course 2V1234:backend development",
+            "Course 3V1234:backend development",
+            "Course 4V1234:backend development",
+            "Course 5V1234:backend development",
+            "Course 6V1234:backend development",
+            "Course 7V1234:backend development",
+            "Course 8V1234:backend development",
+            "Course 9V1234:backend development",
+            "Course 10V1234:backend development"
+          ]
+        }
+      ]
+    },
+    {
+      "BatchName": "Batch 5A5678:No.5",
+      "programs": [
+        {
+          "ProgramName": "Program 1C5678:graphic design",
+          "Courses": [
+            "Course 1C5678:graphic design",
+            "Course 2C5678:graphic design",
+            "Course 3C5678:graphic design",
+            "Course 4C5678:graphic design",
+            "Course 5C5678:graphic design",
+            "Course 6C5678:graphic design",
+            "Course 7C5678:graphic design",
+            "Course 8C5678:graphic design",
+            "Course 9C5678:graphic design",
+            "Course 10C5678:graphic design"
+          ]
+        },
+        {
+          "ProgramName": "Program 1D5678:animation",
+          "Courses": [
+            "Course 1D5678:animation",
+            "Course 2D5678:animation",
+            "Course 3D5678:animation",
+            "Course 4D5678:animation",
+            "Course 5D5678:animation",
+            "Course 6D5678:animation",
+            "Course 7D5678:animation",
+            "Course 8D5678:animation",
+            "Course 9D5678:animation",
+            "Course 10D5678:animation"
+          ]
+        }
+      ]
+    },
+    {
+      "BatchName": "Batch 6H9012:No.6",
+      "programs": [
+        {
+          "ProgramName": "Program 1J9012:android development",
+          "Courses": [
+            "Course 1J9012:android development",
+            "Course 2J9012:android development",
+            "Course 3J9012:android development",
+            "Course 4J9012:android development",
+            "Course 5J9012:android development",
+            "Course 6J9012:android development",
+            "Course 7J9012:android development",
+            "Course 8J9012:android development",
+            "Course 9J9012:android development",
+            "Course 10J9012:android development"
+          ]
+        },
+        {
+          "ProgramName": "Program 1K9012:ios development",
+          "Courses": [
+            "Course 1K9012:ios development",
+            "Course 2K9012:ios development",
+            "Course 3K9012:ios development",
+            "Course 4K9012:ios development",
+            "Course 5K9012:ios development",
+            "Course 6K9012:ios development",
+            "Course 7K9012:ios development",
+            "Course 8K9012:ios development",
+            "Course 9K9012:ios development",
+            "Course 10K9012:ios development"
+          ]
+        }
+      ]
+    }
+  ]
+}

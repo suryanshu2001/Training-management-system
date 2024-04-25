@@ -12,7 +12,7 @@
     <tr *ngFor="let course of dataSource">
       <td>{{ course.code }}</td>
       <td>{{ course.name }}</td>
-      <td>{{ course.topicsCompleted.join(', ') }}</td>
+      <td>{{ truncateTopics(course) }}</td>
       <td>{{ course.topicsInProgress }}</td>
       <td>{{ course.completionPercentage }}</td>
     </tr>

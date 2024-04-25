@@ -32,4 +32,14 @@ export class BatchDetailsComponent {
       completionPercentage: '80%' 
     }
   ];
+
+  maxTopicsDisplayed: number = 1;
+  truncateTopics(course: any): string {
+    if (course.topicsCompleted.length > this.maxTopicsDisplayed) {
+      const additionalTopics = course.topicsCompleted.length - this.maxTopicsDisplayed;
+      return course.topicsCompleted.slice(0, this.maxTopicsDisplayed).join(', ') + ` +${additionalTopics} more`;
+    } else {
+      return course.topicsCompleted.join(', ');
+    }
+  }
 }

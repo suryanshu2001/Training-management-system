@@ -1,29 +1,33 @@
-<table class="table table-striped">
+<table class="table">
     <thead>
-      <tr class="table-primary">
-        <th scope="col">Actions</th>
-        <th scope="col">
+      <tr>
+        <th scope="col" style="background-color: #ecf4fc;border: none;">Actions</th>
+        <th scope="col" style="background-color: #ecf4fc;border:none">
           Topic Name
-          <span>
-            <mat-icon>arrow_upward</mat-icon>
-            <mat-icon>arrow_downward</mat-icon>
-          </span>
+          <mat-icon><span class="material-symbols-outlined">
+            unfold_more
+            </span></mat-icon>
         </th>
-        <th scope="col">Topic Percentage Completion</th>
+        <th scope="col" style="background-color: #ecf4fc;border:none">Topic Percentage Completion</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of dataSource">
-        <th scope="row">
-          <button mat-icon-button>
-            <mat-icon>edit_outline</mat-icon>
+      <tr *ngFor="let item of dataSource;let i = index;">
+        <th scope="row" [style.backgroundColor]="i % 2 === 1 ? '#ffffff' : '#ecf4fc'" style="border:none">
+          <button mat-icon-button  style="border: none; background: none;">
+            <mat-icon><span class="material-symbols-outlined">
+              edit
+              </span></mat-icon>
           </button>
-          <button mat-icon-button>
-            <mat-icon>delete_outline</mat-icon>
+          <button mat-icon-button  style="border: none; background: none;">
+            <mat-icon><span class="material-symbols-outlined">
+              delete
+              </span></mat-icon>
           </button>
         </th>
-        <td>{{ item.topicName }}</td>
-        <td>{{ item.topicCompletion }}</td>
+        <td [style.backgroundColor]="i % 2 === 1 ? '#ffffff' : '#ecf4fc'" style="border:none">{{ item.topicName }}</td>
+
+        <td [style.backgroundColor]="i % 2 === 1 ? '#ffffff' : '#ecf4fc'" style="border:none">{{ item.topicCompletion }}</td>
       </tr>
     </tbody>
   </table>

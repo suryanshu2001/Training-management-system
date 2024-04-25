@@ -1,0 +1,21 @@
+<table class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">Code</th>
+        <th scope="col">Course Name</th>
+        <th scope="col">Topics Completed</th>
+        <th scope="col">Topics in Progress</th>
+        <th scope="col">Course Completion Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of dataSource">
+        <td>{{ course.code }}</td>
+        <td>{{ course.name }}</td>
+        <td>{{ course.topicsCompleted }}</td>
+        <td>{{ course.topicsInProgress }}</td>
+        <td>{{ course.completionPercentage }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

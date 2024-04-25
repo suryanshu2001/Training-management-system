@@ -1,0 +1,30 @@
+<table class="table table-striped">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Actions</th>
+        <th scope="col">
+          Topic Name
+          <span>
+            <mat-icon>arrow_upward</mat-icon>
+            <mat-icon>arrow_downward</mat-icon>
+          </span>
+        </th>
+        <th scope="col">Topic Percentage Completion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dataSource">
+        <th scope="row">
+          <button mat-icon-button>
+            <mat-icon>edit_outline</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+        </th>
+        <td>{{ item.topicName }}</td>
+        <td>{{ item.topicCompletion }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

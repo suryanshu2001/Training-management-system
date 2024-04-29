@@ -1,0 +1,55 @@
+<!-- <button mat-raised-button (click)="openDialog('0ms', '0ms')">Open dialog without animation</button> -->
+<!-- Angular HTML template -->
+
+<div id="app" *ngIf="isDialogOpen">
+    <div class="content">
+      <div class="file-input-box">
+        <h2 style="color: black;">Upload files 
+          <button (click)="closeDialog()" style="float: right;" class="btn"><span class="material-symbols-outlined">
+          close
+          </span>
+          </button>
+        </h2>        
+        <mat-divider></mat-divider>
+        <br><br>
+        <div class="wrapper-file-input">
+          <div style="background-color: rgb(242, 249, 255);" class="input-box" (click)="openFileInput();">
+            <h4>
+              <i class="fa-solid fa-upload"></i>
+              Choose File to upload
+            </h4>
+            <p>
+              <input id="fileInput" type="file" multiple style="display: none;" (change)="onFileSelected($event)">
+            </p>
+          </div>
+          <p style="text-align: center;">Supported File format: PDF,(Max size 2 MB)</p>
+        </div>
+        <br><br>
+        <!-- <div *ngFor="let f of selectedFileNames">
+          {{ f}}
+        </div> -->
+        <div class="content row">
+          <div class="col-md-8"></div>
+          <div class="col-md-2"><button type="submit" class="btn btn-primary">upload</button></div>
+          <div class="col-md-2"><button type="button" class="btn" style="border: 1px solid black;">cancel</button></div>
+        </div>        
+
+        <div class="wrapper-file-section">
+          <div class="selected-files" *ngIf="selectedFileNames.length">
+            <h5>Selected Files</h5>
+            <ul class="file-list" [style]="selectedFileNames.length ? 'max-height:220px' : 'height:auto'">
+                <li *ngFor="let f of selectedFileNames; let index = index; trackBy: trackByFn" class="item">
+                  <span class="name">{{ f.name }} ({{ formatFileSize(f.size) }})</span>
+                  <div class="remove" (click)="removeFile(index)">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </div>
+                </li>
+              </ul>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

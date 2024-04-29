@@ -3,8 +3,11 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnChanges,
   Output,
+  SimpleChanges,
 } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -19,10 +22,13 @@ import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { CourseService } from 'src/app/services/course.service';
 
 @Component({
   selector: 'app-header-comp',
   standalone: true,
+  templateUrl: './header-comp.component.html',
+  styleUrls: ['./header-comp.component.scss'],
   imports: [
     CommonModule,
     MatIconModule,
@@ -38,13 +44,16 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     FormsModule,
   ],
-  templateUrl: './header-comp.component.html',
-  styleUrls: ['./header-comp.component.scss'],
 })
 export class HeaderCompComponent implements OnInit {
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private courseService: CourseService
+  ) {}
+  @Input() heading: string = '';
+
   @Input() toggle: boolean = false;
-  @Output() newToggle = new EventEmitter<boolean>();
+  @Output() toggleChange = new EventEmitter<boolean>();
 
   myControl1 = new FormControl('');
   myControl2 = new FormControl({ value: '', disabled: true }); // Initially disabled
@@ -69,42 +78,76 @@ export class HeaderCompComponent implements OnInit {
     });
   }
 
-  options1: string[] = [
-    'Batch 1K2125:No.1',
-    'Batch 4D4127:No.2',
-    'Batch 12F4155:No.3',
-    'Batch 5A2463:No.4',
-  ];
+  batchNames: string[] = [];
+  programs: string[] = [];
+  courses: string[] = [];
 
-  options2: string[] = [
-    'Program 1D2125:data science',
-    'Program 1f215 :web development',
-    'Program 2E218 :mysql',
-    'Program 2E2124 :php',
-    'Program 3F2126 :bi',
-  ];
+  getPrograms(selectedBatch: string | null) {
+    this.courseService.getCourses().subscribe((courses) => {
+      courses.map((course) => {
+        if (course.BatchName === selectedBatch) {
+          course.programs.map(
+            (program) =>
+              (this.programs = this.programs.concat(program['ProgramName']))
+          );
+          console.log('programs', this.programs);
+          this.filteredOptions2 = this.myControl2.valueChanges.pipe(
+            startWith(''),
+            map((value) => this._filter(value, this.programs))
+          );
+        }
+      });
+    });
+  }
 
-  options3: string[] = [
-    'course 1c4575:php basics',
-    'course 4D124:xml',
-    'course 5a7845:error handling',
-    'course 2z1247 :data visualization',
-  ];
+  getCourses(
+    selectedBatch: string | null,
+    selectedProgram: string | null
+  ): void {
+    this.courseService.getCourses().subscribe((courses) => {
+      courses.map((course) => {
+        if (course.BatchName === selectedBatch) {
+          course.programs.forEach((program) => {
+            if (program['ProgramName'].toString() === selectedProgram) {
+              if (selectedProgram.includes(program['ProgramName'].toString())) {
+                program['Courses'].map((course) => {
+                  this.courses.push(course);
+                });
+              }
+            }
+          });
+        }
+        this.filteredOptions3 = this.myControl3.valueChanges.pipe(
+          startWith(''),
+          map((value) => this._filter(value, this.courses))
+        );
+      });
+    });
+    console.log('Courses', this.courses);
+  }
 
   filteredOptions1: Observable<string[]> | undefined;
   filteredOptions2: Observable<string[]> | undefined;
   filteredOptions3: Observable<string[]> | undefined;
 
   ngOnInit() {
+    this.courseService.getCourses().subscribe((courses) => {
+      courses.map((course) => this.batchNames.push(course.BatchName));
+      this.filteredOptions1 = this.myControl1.valueChanges.pipe(
+        startWith(''),
+        map((value) => this._filter(value, this.batchNames))
+      );
+    });
+
     this.updateDynamicTitles();
 
-    this.filteredOptions1 = this.myControl1.valueChanges.pipe(
-      startWith(''),
-      map((value) => this._filter(value, this.options1))
-    );
-
-    // Subscribe to changes in myControl1 to enable/disable myControl2
+    // Subscribe  to  changes  in  myControl1  to  enable/disable  myControl2
     this.myControl1.valueChanges.subscribe((value) => {
+      this.getPrograms(this.myControl1.value);
+      this.filteredOptions2 = this.myControl2.valueChanges.pipe(
+        startWith(''),
+        map((value) => this._filter(value, this.programs))
+      );
       if (value) {
         this.myControl2.enable(); // Enable myControl2
         this.myControl2.reset(); // Reset its value
@@ -116,13 +159,14 @@ export class HeaderCompComponent implements OnInit {
       }
     });
 
-    this.filteredOptions2 = this.myControl2.valueChanges.pipe(
-      startWith(''),
-      map((value) => this._filter(value, this.options2))
-    );
-
     // Subscribe to changes in myControl2 to enable/disable myControl3
     this.myControl2.valueChanges.subscribe((value) => {
+      this.getCourses(this.myControl1.value, this.myControl2.value);
+      this.filteredOptions3 = this.myControl3.valueChanges.pipe(
+        startWith(''),
+        map((value) => this._filter(value, this.courses))
+      );
+      console.log('new courses:', this.courses);
       if (value) {
         this.myControl3.enable(); // Enable myControl3
         this.myControl3.reset(); // Reset its value
@@ -131,12 +175,8 @@ export class HeaderCompComponent implements OnInit {
         this.myControl3.disable(); // Disable myControl3
       }
     });
-
-    this.filteredOptions3 = this.myControl3.valueChanges.pipe(
-      startWith(''),
-      map((value) => this._filter(value, this.options3))
-    );
   }
+
   updateButtonState() {
     throw new Error('Method not implemented.');
   }
@@ -150,8 +190,8 @@ export class HeaderCompComponent implements OnInit {
 
   onCreateExam() {
     this.toggle = true;
-    this.newToggle.emit(this.toggle);
+    this.toggleChange.emit(this.toggle);
     this.cdr.detectChanges();
     console.log(this.toggle);
-  }
+  }
 }

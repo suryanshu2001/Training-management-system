@@ -1,8 +1,20 @@
 {
   "users": [
-    { "userName": "John", "email": "john2001@gmail.com", "password": "1234" },
-    { "userName": "Rayan", "email": "rayan2001@gmail.com", "password": "1234" },
-    { "userName": "Vimal", "email": "vimal2001@gmail.com", "password": "1234" },
+    {
+      "userName": "John",
+      "email": "john2001@gmail.com",
+      "password": "1234"
+    },
+    {
+      "userName": "Rayan",
+      "email": "rayan2001@gmail.com",
+      "password": "1234"
+    },
+    {
+      "userName": "Vimal",
+      "email": "vimal2001@gmail.com",
+      "password": "1234"
+    },
     {
       "userName": "Keshab",
       "email": "keshab2001@gmail.com",
@@ -265,242 +277,6 @@
           ]
         }
       ]
-    }
-  ],
-
-  "Exams": [
-    {
-      "examId": "101",
-      "examName": "datasciene-analytics",
-      "examDate": "25",
-      "examTime": "9:pm",
-      "examTotalMarks": "500",
-      "examUploadFiles": ["1.png", "2.png"],
-      "courseName": "data science 4D2125"
-    },
-    {
-      "examId": "102",
-      "examName": "datasciene-mathematical",
-      "examDate": "26",
-      "examTime": "10:pm",
-      "examTotalMarks": "500",
-      "examUploadFiles": ["3.png", "4.png"],
-      "courseName": "data science 1D2125"
-    },
-    {
-      "examId": "103",
-      "examName": "datasciene-power-bi",
-      "examDate": "27",
-      "examTime": "9:pm",
-      "examTotalMarks": "500",
-      "examUploadFiles": ["5.png", "6.png"],
-      "courseName": "data science 2D2125"
-    },
-    {
-      "examId": "104",
-      "examName": "datasciene-sql",
-      "examDate": "30",
-      "examTime": "9:pm",
-      "examTotalMarks": "500",
-      "examUploadFiles": ["7.png", "8.png"],
-      "courseName": "data science 4D2125"
-    },
-    {
-      "examId": "105",
-      "examName": "datasciene-machine-algo",
-      "examDate": "28",
-      "examTime": "9:pm",
-      "examTotalMarks": "500",
-      "examUploadFiles": ["exam1.png", "exam2.png"],
-      "courseName": "data science 3D2125"
-    }
-  ],
-
-  "Assignments": [
-    {
-      "assignmentId": "201",
-      "assignmentName": "Introduction to Programming",
-      "assignmentTotalMarks": 100,
-      "assignmentDate": "2024-05-01",
-      "assignmentTime": "9:00pm",
-      "assignmentUploadFiles": ["assignment1.pdf", "assignment2.docx"],
-      "courseName": "data science 4D2125"
-    },
-    {
-      "assignmentId": "202",
-      "assignmentName": "Web Development Project",
-      "assignmentTotalMarks": 150,
-      "assignmentDate": "2024-05-05",
-      "assignmentTime": "10:00pm",
-      "assignmentUploadFiles": ["assignment3.png", "assignment4.zip"],
-      "courseName": "data science 1D2125"
-    },
-    {
-      "assignmentId": "203",
-      "assignmentName": "Database Design Assignment",
-      "assignmentTotalMarks": 200,
-      "assignmentDate": "2024-05-10",
-      "assignmentTime": "9:00pm",
-      "assignmentUploadFiles": ["assignment5.jpg", "assignment6.doc"],
-      "courseName": "data science 2D2125"
-    },
-    {
-      "assignmentId": "204",
-      "assignmentName": "Data Analysis Project",
-      "assignmentTotalMarks": 180,
-      "assignmentDate": "2024-05-15",
-      "assignmentTime": "8:00pm",
-      "assignmentUploadFiles": ["assignment7.csv", "assignment8.xlsx"],
-      "courseName": "data science 3D2125"
-    },
-    {
-      "assignmentId": "205",
-      "assignmentName": "Mobile App Development Assignment",
-      "assignmentTotalMarks": 160,
-      "assignmentDate": "2024-05-20",
-      "assignmentTime": "7:00pm",
-      "assignmentUploadFiles": ["assignment9.png", "assignment10.zip"],
-      "courseName": "data science 4D2125"
-    }
-  ],
-
-  "Students": [
-    {
-      "studentId": "101",
-      "studentName": "vikash",
-      "courses": ["Course 3D2125:data science", "Course 2E218:mysql"],
-      "marks": {
-        "Examinations": [
-          { "examId": "500", "examMarks": 200 },
-          { "examId": "501", "examMarks": 400 },
-          { "examId": "502", "examMarks": 600 },
-          { "examId": "503", "examMarks": 800 }
-        ],
-        "Assignments": [
-          { "assignmentId": "600", "assignmentMarks": 100 },
-          { "assignmentId": "601", "assignmentMarks": 200 },
-          { "assignmentId": "602", "assignmentMarks": 300 }
-        ]
-      }
-    },
-    {
-      "studentId": "102",
-      "studentName": "bedi",
-      "courses": [
-        "Course 1K9012:ios development",
-        "Course 4K9012:ios development"
-      ],
-      "marks": {
-        "Examinations": [
-          { "examId": "504", "examMarks": 250 },
-          { "examId": "505", "examMarks": 450 },
-          { "examId": "506", "examMarks": 650 },
-          { "examId": "507", "examMarks": 850 }
-        ],
-        "Assignments": [
-          { "assignmentId": "603", "assignmentMarks": 150 },
-          { "assignmentId": "604", "assignmentMarks": 250 },
-          { "assignmentId": "605", "assignmentMarks": 350 }
-        ]
-      }
-    },
-    {
-      "studentId": "103",
-      "studentName": "pajji",
-      "courses": ["Course 3D5678:animation", "Course 5C5678:graphic design"],
-      "marks": {
-        "Examinations": [
-          { "examId": "508", "examMarks": 220 },
-          { "examId": "509", "examMarks": 420 },
-          { "examId": "510", "examMarks": 620 },
-          { "examId": "511", "examMarks": 820 }
-        ],
-        "Assignments": [
-          { "assignmentId": "606", "assignmentMarks": 110 },
-          { "assignmentId": "607", "assignmentMarks": 210 },
-          { "assignmentId": "608", "assignmentMarks": 310 }
-        ]
-      }
-    },
-    {
-      "studentId": "104",
-      "studentName": "hemant",
-      "courses": [
-        "Course 2V1234:backend development",
-        "Course 9J9012:android development"
-      ],
-      "marks": {
-        "Examinations": [
-          { "examId": "512", "examMarks": 180 },
-          { "examId": "513", "examMarks": 380 },
-          { "examId": "514", "examMarks": 580 },
-          { "examId": "515", "examMarks": 780 }
-        ],
-        "Assignments": [
-          { "assignmentId": "609", "assignmentMarks": 90 },
-          { "assignmentId": "610", "assignmentMarks": 190 },
-          { "assignmentId": "611", "assignmentMarks": 290 }
-        ]
-      }
-    },
-    {
-      "studentId": "105",
-      "studentName": " usmita",
-      "courses": [
-        "Course 2P7890:cybersecurity",
-        "Course 6J9012:android development"
-      ],
-      "marks": {
-        "Examinations": [
-          { "examId": "516", "examMarks": 300 },
-          { "examId": "517", "examMarks": 500 },
-          { "examId": "518", "examMarks": 700 },
-          { "examId": "519", "examMarks": 900 }
-        ],
-        "Assignments": [
-          { "assignmentId": "612", "assignmentMarks": 200 },
-          { "assignmentId": "613", "assignmentMarks": 300 },
-          { "assignmentId": "614", "assignmentMarks": 400 }
-        ]
-      }
-    }
-  ],
-
-  "courseDetails": [
-    {
-      "code": "100",
-      "courseName": "data science 1D2125",
-      "topicsCompleted": ["sql", "ml"],
-      "topicsInProgress": ["angular", "react"],
-      "courseCompletion": "20%"
-    },
-    {
-      "code": "101",
-      "courseName": "data science 2D2125",
-      "topicsCompleted": ["python", "statistics"],
-      "topicsInProgress": ["deep learning", "data visualization"],
-      "courseCompletion": "35%"
-    },
-    {
-      "code": "102",
-      "courseName": "data science 3D2125",
-      "topicsCompleted": ["machine learning", "data analysis"],
-      "topicsInProgress": ["big data", "natural language processing"],
-      "courseCompletion": "50%"
-    },
-    {
-      "code": "103",
-      "courseName": "data science 4D2125",
-      "topicsCompleted": ["neural networks", "computer vision"],
-      "topicsInProgress": ["reinforcement learning", "cloud computing"],
-      "courseCompletion": "70%"
-    },
-    {
-      "code": "104",
-      "courseName": "data science 5D2125",
-      "topicsCompleted": ["deep learning", "time series analysis"],
-      "topicsInProgress": ["distributed computing", "blockchain"],
-      "courseCompletion": "90%"
     }
   ]
 }

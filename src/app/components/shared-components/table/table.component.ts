@@ -19,7 +19,7 @@ export class TableComponent {
     { student: 'paaji', marks: 100 },
   ];
 
-  @Input() visible: boolean=false;
+  @Input() visible!: boolean;
 
   constructor() { }
 }

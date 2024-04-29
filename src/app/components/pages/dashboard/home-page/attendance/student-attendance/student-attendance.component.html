@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Student Name</th>
+        <th scope="col" style="padding-inline-end: 300px;">Attendance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>All Students</td>
+        <td style="padding-inline-end: 300px;"><input class="form-check-input" type="checkbox" value="" id="allStudentsCheckbox" (change)="selectAllStudents($event)"></td>
+      </tr>
+    
+      <tr *ngFor="let student of studentNames">
+        <td>{{ student }}</td>
+        <td style="padding-inline-end: 300px;"><input class="form-check-input" type="checkbox" value="" id="{{student}}Checkbox" (change)="checkSingleStudent($event)"></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  

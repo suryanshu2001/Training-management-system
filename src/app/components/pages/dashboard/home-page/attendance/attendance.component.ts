@@ -10,10 +10,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { AttendanceDetailsComponent } from './attendance-details/attendance-details.component';
+import { StudentAttendanceComponent } from './student-attendance/student-attendance.component';
 @Component({
   selector: 'app-attendance',
   standalone: true,
-  imports: [CommonModule,MatFormFieldModule, MatSelectModule, NgFor, MatInputModule, FormsModule,MatGridListModule,MatDatepickerModule,MatNativeDateModule,MatButtonModule,MatIconModule],
+  imports: [CommonModule,MatFormFieldModule, MatSelectModule, NgFor, MatInputModule, FormsModule,MatGridListModule,MatDatepickerModule,MatNativeDateModule,MatButtonModule,MatIconModule,AttendanceDetailsComponent,StudentAttendanceComponent],
   templateUrl: './attendance.component.html',
   styleUrls: ['./attendance.component.scss']
 })
@@ -29,6 +31,8 @@ export class AttendanceComponent {
   isProgramSelected: boolean = false;
   isCourseSelected: boolean = false;
   isAttendanceSelected: boolean = false;
+  showAttendanceDetailsCondition: boolean = false;
+
 
   onBatchChange() {
     this.isBatchSelected = !!this.selectedBatch;
@@ -47,5 +51,8 @@ export class AttendanceComponent {
   }
   sortTopicName() {
     console.log('Sorting by Topic Name');
+  }
+  showAttendanceDetails(){
+    this.showAttendanceDetailsCondition = true;
   }
 }

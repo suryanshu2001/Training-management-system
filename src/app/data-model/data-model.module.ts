@@ -58,3 +58,12 @@ export interface BatchesandPrograms {
   BatchName: string;
   programs: Program[];
 }
+
+export interface AttendanceDetails{
+  attendanceDate:string;
+  studentId:string;
+  studentName:string;
+  attendanceStatus:string;
+  courseName:string;
+  topicName:string;
+}

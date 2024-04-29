@@ -21,5 +21,5 @@ export class TableComponent {
 
   @Input() visible!: boolean;
 
-  constructor() { }
+  constructor() {}
 }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import {
   ChangeDetectorRef,
   Component,
@@ -48,7 +49,8 @@ import { CourseService } from 'src/app/services/course.service';
 export class HeaderCompComponent implements OnInit {
   constructor(
     private cdr: ChangeDetectorRef,
-    private courseService: CourseService
+    private courseService: CourseService,
+    private http: HttpClient
   ) {}
   @Input() heading: string = '';
 
@@ -104,26 +106,15 @@ export class HeaderCompComponent implements OnInit {
     selectedBatch: string | null,
     selectedProgram: string | null
   ): void {
-    this.courseService.getCourses().subscribe((courses) => {
-      courses.map((course) => {
-        if (course.BatchName === selectedBatch) {
-          course.programs.forEach((program) => {
-            if (program['ProgramName'].toString() === selectedProgram) {
-              if (selectedProgram.includes(program['ProgramName'].toString())) {
-                program['Courses'].map((course) => {
-                  this.courses.push(course);
-                });
-              }
-            }
-          });
-        }
+    this.http
+      .get<any>('http://localhost:3000/courseDetails')
+      .subscribe((courses: any[]) => {
+        this.courses = courses.map((course: any) => course.courseName);
         this.filteredOptions3 = this.myControl3.valueChanges.pipe(
           startWith(''),
           map((value) => this._filter(value, this.courses))
         );
       });
-    });
-    console.log('Courses', this.courses);
   }
 
   filteredOptions1: Observable<string[]> | undefined;
@@ -193,5 +184,5 @@ export class HeaderCompComponent implements OnInit {
     this.toggleChange.emit(this.toggle);
     this.cdr.detectChanges();
     console.log(this.toggle);
-  }
+  }
 }

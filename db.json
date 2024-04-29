@@ -502,5 +502,119 @@
       "topicsInProgress": ["distributed computing", "blockchain"],
       "courseCompletion": "90%"
     }
+  ],
+  "attendanceDetails":[
+    {
+      "attendanceDate":"01-05-2024",
+      "studentId":"101",
+      "studentName":"Ushmita",
+      "attendanceStatus":"true",
+      "courseName":"data science 1D2125",
+      "topicName":"sql"
+    },
+    {
+      "attendanceDate":"01-05-2024",
+      "studentId":"102",
+      "studentName":"Vikash",
+      "attendanceStatus":"true",
+      "courseName":"data science 1D2125",
+      "topicName":"sql"
+    },
+    {
+      "attendanceDate":"01-05-2024",
+      "studentId":"103",
+      "studentName":"Bedi",
+      "attendanceStatus":"true",
+      "courseName":"data science 1D2125",
+      "topicName":"sql"
+    },
+    {
+      "attendanceDate":"01-05-2024",
+      "studentId":"104",
+      "studentName":"Pajji",
+      "attendanceStatus":"false",
+      "courseName":"data science 1D2125",
+      "topicName":"sql"
+    },
+    {
+      "attendanceDate":"02-05-2024",
+      "studentId":"101",
+      "studentName":"Ushmita",
+      "attendanceStatus":"true",
+      "courseName":"data science 1D2125",
+      "topicName":"ml"
+    },
+    {
+      "attendanceDate":"02-05-2024",
+      "studentId":"102",
+      "studentName":"Vikash",
+      "attendanceStatus":"true",
+      "courseName":"data science 1D2125",
+      "topicName":"ml"
+    },
+    {
+      "attendanceDate":"02-05-2024",
+      "studentId":"103",
+      "studentName":"Bedi",
+      "attendanceStatus":"true",
+      "courseName":"data science 1D2125",
+      "topicName":"ml"
+    },
+    {
+      "attendanceDate":"02-05-2024",
+      "studentId":"104",
+      "studentName":"Pajji",
+      "attendanceStatus":"false",
+      "courseName":"data science 1D2125",
+      "topicName":"ml"
+    },
+    {
+      "attendanceDate":"03-05-2024",
+      "studentId":"101",
+      "studentName":"Ushmita",
+      "attendanceStatus":"true",
+      "courseName":"data science 2D2125",
+      "topicName":"python"
+    },
+    {
+      "attendanceDate":"03-05-2024",
+      "studentId":"102",
+      "studentName":"Vikash",
+      "attendanceStatus":"true",
+      "courseName":"data science 2D2125",
+      "topicName":"python"
+    },
+    {
+      "attendanceDate":"03-05-2024",
+      "studentId":"103",
+      "studentName":"Bedi",
+      "attendanceStatus":"true",
+      "courseName":"data science 2D2125",
+      "topicName":"python"
+    },
+    {
+      "attendanceDate":"03-05-2024",
+      "studentId":"104",
+      "studentName":"Pajji",
+      "attendanceStatus":"false",
+      "courseName":"data science 2D2125",
+      "topicName":"python"
+    },
+    {
+      "attendanceDate":"04-05-2024",
+      "studentId":"101",
+      "studentName":"Ushmita",
+      "attendanceStatus":"true",
+      "courseName":"data science 2D2125",
+      "topicName":"statistics"
+    },
+    {
+      "attendanceDate":"04-05-2024",
+      "studentId":"102",
+      "studentName":"Vikash",
+      "attendanceStatus":"true",
+      "courseName":"data science 2D2125",
+      "topicName":"statistics"
+    }
   ]
 }

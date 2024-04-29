@@ -19,8 +19,10 @@ import { TableComponent } from 'src/app/components/shared-components/table/table
 })
 export class AssignmentsPageComponent {
     toggleShow: boolean = false;
+   
     updateToggle(toggle:boolean){
-        this.toggleShow = !this.toggleShow;
+       
+        this.toggleShow = true;
       }
 
       tableVisible: boolean = false;

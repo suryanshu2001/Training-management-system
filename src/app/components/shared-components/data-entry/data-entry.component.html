@@ -1,71 +1,142 @@
  <div class="table-responsive" style=" overflow:hidden; background-color:white;">
         <form class="form" (ngSubmit)="onSubmit(examForm)" #examForm="ngForm" novalidate>
             <table class="w-100">
-                <tr>
-                    <th scope="col" class="text-center">Actions</th>
-                    <th scope="col" class="text-center">
-                        <div>{{title}}                      
-                        <button disabled mat-icon-button>
-                            <mat-icon><span class="material-symbols-outlined">expand_less</span></mat-icon>
-                            <mat-icon><span class="material-symbols-outlined">expand_more</span></mat-icon>
-                        </button></div><br>
-                    </th>
-                    <th scope="col" class="text-center">Total Marks</th>
-                    <th scope="col" class="text-center" >
-                        <div> Date
-                        <button disabled mat-icon-button >
-                            <mat-icon><span class="material-symbols-outlined">expand_less</span></mat-icon>
-                            <mat-icon><span class="material-symbols-outlined">expand_more</span></mat-icon>
-                        </button></div><br>
-                    </th>
-                    <th scope="col" class="text-center">Time <br></th>
-                    <th scope="col" class="text-center">Files
-                        <mat-raised-button
-                        matTooltip="Optional to upload files"
-                        matTooltipPosition="above"
-                        aria-label="Button that displays a tooltip in various positions">
-                        <i class="fa-solid fa-circle-info"></i>
-                        </mat-raised-button><br>
-                        
-                    </th>
-                </tr>
-                <tr>
-                    <td class="text-center">
-                        <button type="submit" name="tick" class="btn" [disabled]="!examForm.valid" style="border: 0 !important;">
-                            <i class="fa-solid fa-check"></i>
-                        </button>
-                        <button type="button" name="cross" class="btn">
-                            <i class="fa-solid fa-xmark" style="color: red;"></i>
-                        </button> |
-                        <button class="btn" (click)="toShow()">Mark Student</button>
-                    </td>
-                    <td class="text-center">
-                        <input type="text" name="examName" placeholder="Enter Exam - name" class="border" style="text-align:center;" [(ngModel)]="formdata.examName" required>
-                        <div *ngIf="!formdata.examName && examForm.submitted" style="color: red;">Exam Name is required</div>
-                    </td>
-                    <td class="text-center">
-                        <input type="text" name="totalMarks" placeholder="Enter Marks" class="border" style="text-align:center;" min="0" max="100"
-                        [(ngModel)]="formdata.totalMarks" required>
-                        <div *ngIf="!formdata.totalMarks && examForm.submitted" style="color: red;">Marks is required</div>
-                    </td>
-                    <td class="text-center">
-                        <label for="datepick"></label>
-                        <input type="date" name="datepick" required ngModel>
-                        <div *ngIf="!formdata.datepick && examForm.submitted" style="color: red;">Date is required</div>
-                    </td>
-                    <td class="text-center">
-                        <input type="text" name="time" placeholder="00:00 AM/PM" class="border w-52" style="text-align:center;" [(ngModel)]="formdata.time" required>
-                        <div *ngIf="!formdata.time && examForm.submitted" style="color: red;">time is required</div>
-                        <!-- <div *ngIf="formdata.time && !isValidTime(formdata.time) && examForm.submitted">Enter Valid time</div> -->
-                    </td>
-                    <td class="text-center">
-                        <button mat-raised-button (click)="openDialog('0ms', '0ms')">
-                            <i class="fa-solid fa-upload"></i>
-                        </button>
-                                          
-                                                           
-                    </td>
-                </tr>
+                <div *ngIf="showFirstSection">
+                    <table class="w-100">
+                        <tr>
+                            <th scope="col" class="text-center" style="padding: 10px;">Actions</th>
+                            <th scope="col" class="text-center" style="padding: 10px;">
+                                <div>{{title}}                      
+                                    <button disabled mat-icon-button>
+                                        <mat-icon><span class="material-symbols-outlined">
+                                            expand_all
+                                            </span></mat-icon>
+                                    </button>
+                                </div><br>
+                            </th>
+                            <th scope="col" class="text-center" style="padding: 10px;">Total Marks</th>
+                            <th scope="col" class="text-center" style="padding: 10px;">
+                                <div> Date
+                                    <button disabled mat-icon-button >
+                                        <mat-icon><span class="material-symbols-outlined">
+                                            expand_all
+                                            </span></mat-icon>
+                                    </button>
+                                </div><br>
+                            </th>
+                            <th scope="col" class="text-center" style="padding: 10px;">Time <br></th>
+                            <th scope="col" class="text-center" style="padding: 10px;">Files
+                                <mat-raised-button
+                                    matTooltip="Optional to upload files"
+                                    matTooltipPosition="above">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                </mat-raised-button><br>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="text-center" style="padding: 10px;">
+                                <button type="submit" name="tick" class="btn" [disabled]="!examForm.valid" style="border: 0 !important;" (click)="toggleSection()">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                                <button type="button" name="cross" class="btn">
+                                    <i class="fa-solid fa-xmark" style="color: red;"></i>
+                                </button> |
+                                <button class="btn" disabled style="border-color: white;">Mark Students</button>
+                            </td>
+                            <td class="text-center" style="padding: 10px;">
+                                <input type="text" name="examName" placeholder="Enter Assignments" class="border" style="text-align:center;" [(ngModel)]="formdata.examName" required>
+                                <div *ngIf="!formdata.examName && examForm.submitted" style="color: red;">Exam Name is required</div>
+                            </td>
+                            <td class="text-center" style="padding: 10px;">
+                                <input type="text" name="totalMarks" placeholder="Enter Marks" class="border" style="text-align:center;" min="0" max="100"
+                                [(ngModel)]="formdata.totalMarks" required>
+                                <div *ngIf="!formdata.totalMarks && examForm.submitted" style="color: red;">Marks is required</div>
+                            </td>
+                            <td class="text-center" style="padding: 10px;">
+                                <label for="datepick"></label>
+                                <input type="date" name="datepick" required [(ngModel)]="formdata.datepick">
+                                <div *ngIf="!formdata.datepick && examForm.submitted" style="color: red;">Date is required</div>
+                            </td>
+                            <td class="text-center" style="padding: 10px;">
+                                <input type="text" name="time" placeholder="00:00 AM/PM" class="border w-52" style="text-align:center;" [(ngModel)]="formdata.time" required>
+                                <div *ngIf="!formdata.time && examForm.submitted" style="color: red;">time is required</div>
+                                <!-- <div *ngIf="formdata.time && !isValidTime(formdata.time) && examForm.submitted">Enter Valid time</div> -->
+                            </td>
+                            <td class="text-center" style="padding: 10px;">
+                                <button mat-raised-button (click)="openDialog('0ms', '0ms')">
+                                    <i class="fa-solid fa-upload"></i>
+                                </button>                                                    
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+
+                <div *ngIf="!showFirstSection" style="background-color: rgb(237, 245, 252);">
+                    <table class="w-100">
+                        <tr class="header">
+                            <th scope="col" class="text-center" style="padding: 10px;">Actions</th>
+                            <th scope="col" class="text-center" style="padding: 10px;">
+                                <div>{{title}}                      
+                                    <button disabled mat-icon-button>
+                                        <mat-icon><span class="material-symbols-outlined">
+                                            expand_all
+                                            </span></mat-icon>
+                                    </button>
+                                </div><br>
+                            </th>
+                            <th scope="col" class="text-center" style="padding: 10px;">Total Marks</th>
+                            <th scope="col" class="text-center" style="padding: 10px;">
+                                <div> Date
+                                    <button disabled mat-icon-button >
+                                        <mat-icon><span class="material-symbols-outlined">
+                                            expand_all
+                                            </span></mat-icon>
+                                    </button>
+                                </div><br>
+                            </th>
+                            <th scope="col" class="text-center" style="padding: 10px;">Time <br></th>
+                            <th scope="col" class="text-center" style="padding: 10px;">Files
+                                <mat-raised-button
+                                    matTooltip="Optional to upload files"
+                                    matTooltipPosition="above"
+                                    aria-label="Button that displays a tooltip in various positions">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                </mat-raised-button><br>
+                            </th>
+                        </tr>
+                        <tr class="data">
+                            <td class="text-center" style="padding: 10px;">
+                                <button type="submit" name="tick" class="btn" style="border: 0 !important;">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button type="button" name="delete" class="btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button> |
+                                <button class="btn" (click)="toShow()">Mark Students</button>
+                            </td>
+                            <td class="text-center" style="padding: 10px;">
+                                <div>{{formdata.examName}}</div>
+                            </td>
+                            <td class="text-center" style="padding: 10px;">
+                                <div>{{formdata.totalMarks}}</div>
+                            </td>
+                            <td class="text-center" style="padding: 10px;">
+                                <div>{{ formdata.datepick | date: 'yyyy-MM-dd' }}</div>
+                            </td>
+                            <td class="text-center" style="padding: 10px;">
+                                <div>{{formdata.time}}</div>
+                            </td>
+                            <td class="text-center" style="padding: 10px;">
+                                <button disabled mat-raised-button (click)="openDialog('0ms', '0ms')">
+                                    <i class="fa-solid fa-upload"></i>
+                                </button>                                                    
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                
             </table>
         </form>
     </div>

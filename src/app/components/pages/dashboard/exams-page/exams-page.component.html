@@ -23,10 +23,7 @@
     class="container"
     style="background-color: white; margin-top: 60px; padding-top: 20px"
   >
-    <app-header-comp
-      [heading]="'Exams'"
-      [toggle]="toggleShow"
-    ></app-header-comp>
+    <app-header-comp [heading]="'Exams'" [toggle]="toggleShow" (toggleChange)="updateToggle($event)"></app-header-comp>
     <div *ngIf="toggleShow">
     <app-data-entry [title]="'Exam-name'"></app-data-entry>
 </div>

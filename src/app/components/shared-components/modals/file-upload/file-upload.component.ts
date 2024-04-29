@@ -27,7 +27,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./file-upload.component.scss']
 })
 export class FileUploadComponent {
-  
+  uploadedFiles!: FileList | null;
   trackByFn(index: number, item: any) {
     return index; // or item.id if you have unique identifiers
   }
@@ -45,7 +45,15 @@ export class FileUploadComponent {
   onFileSelected(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     const files = inputElement.files;
-    // Do something with the selected file(s)
+    this.uploadedFiles=files;
+      if (files) {
+      for (let i = 0; i < files.length; i++) {
+        this.selectedFileNames.push({
+          name: files[i].name,
+          size: files[i].size
+        });
+      }
+    }
   }
 
   // handleFileChange(event: Event) {
@@ -73,4 +81,11 @@ export class FileUploadComponent {
   removeFile(index: number) {
     this.selectedFileNames.splice(index, 1);
   }
+
+  isDialogOpen:boolean=true;
+  closeDialog(){
+    this.isDialogOpen = false;
+  }
+
+
 }

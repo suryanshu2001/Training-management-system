@@ -25,8 +25,15 @@ import { MatDialog } from '@angular/material/dialog';
 })
 
 export class DataEntryComponent{
-  showTableHeader = false;
+  // showTableHeader = false;
   @Output() showTable: EventEmitter<void> = new EventEmitter<void>();
+  
+  showFirstSection: boolean = true;
+
+    toggleSection() {
+        this.showFirstSection = !this.showFirstSection;
+    }
+
 
   formdata={
     examName:'',

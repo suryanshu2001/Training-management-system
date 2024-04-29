@@ -2,7 +2,7 @@
 <div *ngIf="toggleShow">
     <app-data-entry [title]="'Assignments'"></app-data-entry>
 </div> -->
-<div class="container-fluid" style="background-color: #ecf4fc; height: 100%;">
+<div class="container-fluid" style="background-color: #ecf4fc; min-height: 100%; overflow-x:hidden;">
 <div class="row" style="padding-top: 40px; padding-left: 90px;">
     <div class="col-md-12" style="color: rgb(85, 80, 80); display: flex; align-items: center; font-size:larger">
       Assignment
@@ -12,7 +12,6 @@
     </div>
   </div>
   <div class="container" style="background-color: white; margin-top: 60px; padding-top: 20px;">
-  <br>
     <app-header-comp [heading]="'Assignments'" [toggle]="toggleShow" (toggleChange)="updateToggle($event)"></app-header-comp>
     <div *ngIf="toggleShow">
         <app-data-entry (showTable)="toggleTable()" [title]="'Assignment'"></app-data-entry>

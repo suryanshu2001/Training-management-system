@@ -1,10 +1,11 @@
-import { Component, ElementRef, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip'; // Import MatTooltipModule
 
 @Component({
   selector: 'app-batch-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatTooltipModule],
   templateUrl: './batch-details.component.html',
   styleUrls: ['./batch-details.component.scss']
 })
@@ -30,16 +31,24 @@ export class BatchDetailsComponent {
       topicsCompleted: ['Topic 1', 'Topic 2'], 
       topicsInProgress: 'Topic 2', 
       completionPercentage: '80%' 
+    },
+    { 
+      code: 238, 
+      name: 'Course 3', 
+      topicsCompleted: ['Topic 1'], 
+      topicsInProgress: 'Topic 2', 
+      completionPercentage: '80%' 
     }
   ];
 
   maxTopicsDisplayed: number = 1;
   truncateTopics(course: any): string {
     if (course.topicsCompleted.length > this.maxTopicsDisplayed) {
-      const additionalTopics = course.topicsCompleted.length - this.maxTopicsDisplayed;
-      return course.topicsCompleted.slice(0, this.maxTopicsDisplayed).join(', ') + ` +${additionalTopics} more`;
+      const additionalTopics = course.topicsCompleted.slice(this.maxTopicsDisplayed);
+      return course.topicsCompleted.slice(0, this.maxTopicsDisplayed).join(', ') + ` +${additionalTopics.length} more`;
     } else {
       return course.topicsCompleted.join(', ');
     }
   }
+  
 }

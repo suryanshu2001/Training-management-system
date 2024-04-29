@@ -53,3 +53,8 @@ interface CourseDetails {
   topicsInProgress: string[];
   courseCompletion: string;
 }
+
+export interface BatchesandPrograms {
+  BatchName: string;
+  programs: Program[];
+}

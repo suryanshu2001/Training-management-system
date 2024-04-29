@@ -12,7 +12,11 @@
     <tr *ngFor="let course of dataSource">
       <td>{{ course.code }}</td>
       <td>{{ course.name }}</td>
-      <td>{{ truncateTopics(course) }}</td>
+      <td>
+        <span [matTooltip]="course.topicsCompleted.length > maxTopicsDisplayed ? course.topicsCompleted.join(', ') : null">
+          {{ truncateTopics(course) }}
+        </span>
+      </td>
       <td>{{ course.topicsInProgress }}</td>
       <td>{{ course.completionPercentage }}</td>
     </tr>

@@ -6,11 +6,12 @@ import { NgFor } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { BatchDetailsComponent } from './batch-details/batch-details.component';
 
 @Component({
   selector: 'app-batches',
   standalone: true,
-  imports: [CommonModule,MatFormFieldModule, MatSelectModule, NgFor, MatInputModule, FormsModule,MatGridListModule],
+  imports: [CommonModule,MatFormFieldModule, MatSelectModule, NgFor, MatInputModule, FormsModule,MatGridListModule,BatchDetailsComponent],
   templateUrl: './batches.component.html',
   styleUrls: ['./batches.component.scss']
 })

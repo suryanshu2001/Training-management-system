@@ -1,8 +1,7 @@
-
 <!-- <app-table></app-table> -->
 <div
   class="container-fluid"
-  style="background-color: #ecf4fc; height: 100%; font-size: 18px"
+  style="background-color: #ecf4fc; min-height: 100%; font-size: 18px"
 >
   <div class="row" style="padding-top: 40px; padding-left: 90px">
     <div
@@ -26,10 +25,14 @@
     <app-header-comp
       [heading]="'Exams'"
       [toggle]="toggleShow"
+      (toggleChange)="updateToggle($event)"
     ></app-header-comp>
     <div *ngIf="toggleShow">
-    <app-data-entry [title]="'Exam-name'"></app-data-entry>
-</div>
-<app-table></app-table>
+      <app-data-entry
+        (showTable)="toggleTable()"
+        [title]="'Exam-name'"
+      ></app-data-entry>
+      <app-table [visible]="tableVisible"></app-table>
+    </div>
   </div>
 </div>

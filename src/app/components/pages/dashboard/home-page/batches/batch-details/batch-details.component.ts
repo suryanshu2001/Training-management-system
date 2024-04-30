@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip'; // Import MatTooltipModule
 
@@ -9,7 +9,11 @@ import { MatTooltipModule } from '@angular/material/tooltip'; // Import MatToolt
   templateUrl: './batch-details.component.html',
   styleUrls: ['./batch-details.component.scss']
 })
-export class BatchDetailsComponent {
+export class BatchDetailsComponent implements OnInit{
+
+ngOnInit(): void {
+  
+}  
   dataSource: any[] = [
     { 
       code: 234, 

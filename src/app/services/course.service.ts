@@ -15,10 +15,4 @@ export class CourseService {
   getCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(`${this.baseUrl}courses`);
   }
-  // getBatches(){
-  //   return this.getCourses().subscribe(courses => {
-  //     courses.map(course => this.batchNames.push(course.BatchName));
-  //   });
-  //   console.log('Batch names:', this.batchNames);
-  // }
 }

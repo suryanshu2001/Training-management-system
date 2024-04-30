@@ -18,4 +18,19 @@ describe('BatchDetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should display table headers', () => {
+  //   const compiled = fixture.nativeElement;
+  //   const headers = compiled.querySelectorAll('th');
+  //   expect(headers.length).toBe(5); 
+  //   const expectedHeaders = ['Code', 'Course Name', 'Topics Completed', 'Topics in Progress', 'Course Completion Percentage'];
+  //   headers.forEach((header: HTMLElement, index: number) => {
+  //     const textContent = header.textContent;
+  //     expect(textContent).toBeTruthy();
+  //     if (textContent) {
+  //       expect(textContent.trim()).toBe(expectedHeaders[index]);
+  //     }
+  //   });
+  // });  
+  
 });

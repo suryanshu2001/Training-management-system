@@ -1,9 +1,7 @@
 <mat-grid-list cols="4" rowHeight="100px" style="background-color: #ecf4fc;">
   <mat-grid-tile><mat-form-field>
     <mat-select placeholder="Batch Code:Batch Name" [(ngModel)]="selectedBatch" (ngModelChange)="onBatchChange()">
-      <mat-option value="1">Bank A</mat-option>
-      <mat-option value="2">Bank B</mat-option>
-      <mat-option value="3">Bank C</mat-option>
+      <mat-option *ngFor="let batch of batchNames" [value]="batch">{{ batch }}</mat-option>
     </mat-select>
   </mat-form-field></mat-grid-tile>
   <mat-grid-tile><mat-form-field class="example-full-width">
@@ -12,9 +10,7 @@
   </mat-form-field></mat-grid-tile>
   <mat-grid-tile><mat-form-field>
     <mat-select placeholder="Program Code:Program Name" [(ngModel)]="selectedProgram" (ngModelChange)="onProgramChange()" [disabled]="!isBatchSelected || !isDateSelected">
-      <mat-option value="1">Bank A</mat-option>
-      <mat-option value="2">Bank B</mat-option>
-      <mat-option value="3">Bank C</mat-option>
+      <mat-option *ngFor="let program of programs" [value]="program">{{program}}</mat-option>
     </mat-select>
   </mat-form-field></mat-grid-tile>
   <mat-grid-tile></mat-grid-tile>

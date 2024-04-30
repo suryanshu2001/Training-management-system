@@ -46,7 +46,7 @@ export interface Students {
   };
 }
 
-interface CourseDetails {
+export interface CourseDetails {
   code: string;
   courseName: string;
   topicsCompleted: string[];

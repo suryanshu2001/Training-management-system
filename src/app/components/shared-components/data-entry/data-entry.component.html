@@ -6,7 +6,7 @@
                         <tr>
                             <th scope="col" class="text-center" style="padding: 10px;">Actions</th>
                             <th scope="col" class="text-center" style="padding: 10px;">
-                                <div>{{title}}                      
+                                <div>{{title}}   &nbsp;                   
                                     <button disabled mat-icon-button>
                                         <mat-icon><span class="material-symbols-outlined">
                                             expand_all
@@ -14,9 +14,9 @@
                                     </button>
                                 </div><br>
                             </th>
-                            <th scope="col" class="text-center" style="padding: 10px;">Total Marks</th>
+                            <th scope="col" class="text-center" style="padding: 10px;">{{marks}}</th>
                             <th scope="col" class="text-center" style="padding: 10px;">
-                                <div> Date
+                                <div> {{dates}}
                                     <button disabled mat-icon-button >
                                         <mat-icon><span class="material-symbols-outlined">
                                             expand_all
@@ -24,8 +24,8 @@
                                     </button>
                                 </div><br>
                             </th>
-                            <th scope="col" class="text-center" style="padding: 10px;">Time <br></th>
-                            <th scope="col" class="text-center" style="padding: 10px;">Files
+                            <th scope="col" class="text-center" style="padding: 10px;">{{times}} <br></th>
+                            <th scope="col" class="text-center" style="padding: 10px;">{{uploadFiles}}
                                 <mat-raised-button
                                     matTooltip="Optional to upload files"
                                     matTooltipPosition="above">
@@ -38,19 +38,19 @@
                                 <button type="submit" name="tick" class="btn" [disabled]="!examForm.valid" style="border: 0 !important;" (click)="toggleSection()">
                                     <i class="fa-solid fa-check"></i>
                                 </button>
-                                <button type="button" name="cross" class="btn">
+                                <button type="button" name="cross" class="btn" (click)="clearForm()">
                                     <i class="fa-solid fa-xmark" style="color: red;"></i>
                                 </button> |
                                 <button class="btn" disabled style="border-color: white;">Mark Students</button>
                             </td>
                             <td class="text-center" style="padding: 10px;">
                                 <input type="text" name="examName" placeholder="Enter Assignments" class="border" style="text-align:center;" [(ngModel)]="formdata.examName" required>
-                                <div *ngIf="!formdata.examName && examForm.submitted" style="color: red;">Exam Name is required</div>
+                                <div *ngIf="!formdata.examName && examForm.submitted" style="color: red;">Assignment Name is required</div>
                             </td>
                             <td class="text-center" style="padding: 10px;">
                                 <input type="text" name="totalMarks" placeholder="Enter Marks" class="border" style="text-align:center;" min="0" max="100"
                                 [(ngModel)]="formdata.totalMarks" required>
-                                <div *ngIf="!formdata.totalMarks && examForm.submitted" style="color: red;">Marks is required</div>
+                                <div *ngIf="!formdata.totalMarks && examForm.submitted" style="color: red;">Total Marks is required</div>
                             </td>
                             <td class="text-center" style="padding: 10px;">
                                 <label for="datepick"></label>
@@ -75,9 +75,10 @@
                 <div *ngIf="!showFirstSection" style="background-color: rgb(237, 245, 252);">
                     <table class="w-100">
                         <tr class="header">
-                            <th scope="col" class="text-center" style="padding: 10px;">Actions</th>
+                            <br>
+                            <th scope="col" class="text-center" style="margin:10px; float:left;">Actions</th>
                             <th scope="col" class="text-center" style="padding: 10px;">
-                                <div>{{title}}                      
+                                <div style="float: left;">{{title}}                      
                                     <button disabled mat-icon-button>
                                         <mat-icon><span class="material-symbols-outlined">
                                             expand_all
@@ -106,17 +107,17 @@
                             </th>
                         </tr>
                         <tr class="data">
-                            <td class="text-center" style="padding: 10px;">
-                                <button type="submit" name="tick" class="btn" style="border: 0 !important;">
-                                    <i class="fa-solid fa-pen"></i>
+                            <td class="text-center" style="float:left;">
+                                <button type="submit" name="tick" class="btn" (click)="toEdit()">
+                                    <i class="fa-solid fa-pen" ></i>
                                 </button>
-                                <button type="button" name="delete" class="btn">
-                                    <i class="fa-solid fa-trash"></i>
+                                <button type="button" name="delete" class="btn" (click)="onDeleteButtonClick()" >
+                                    <i class="fa-solid fa-trash" ></i>
                                 </button> |
                                 <button class="btn" (click)="toShow()">Mark Students</button>
                             </td>
                             <td class="text-center" style="padding: 10px;">
-                                <div>{{formdata.examName}}</div>
+                                <div style="float: left;">{{formdata.examName}}</div>
                             </td>
                             <td class="text-center" style="padding: 10px;">
                                 <div>{{formdata.totalMarks}}</div>

@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter,  OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderCompComponent } from '../../../shared-components/header-comp/header-comp.component';
 import { TableComponent } from '../../../shared-components/table/table.component';
@@ -68,12 +68,20 @@ export class ExamsPageComponent implements OnInit {
     console.log('Courses', this.courses);
   }
 
-  updateToggle(toggle: boolean) {
+  updateToggle(toggle: boolean) {     // Update toggle value to enable/disable the form fields
     this.toggleShow = toggle;
   }
 
   tableVisible: boolean = false;
-  toggleTable() {
+  toggleTable() {                 
     this.tableVisible = !this.tableVisible;
+  }
+
+
+  selectedOption: string = '';
+
+  // Update selected option when emitted from header component
+  onOptionSelected(option: string) {
+    this.selectedOption = option;
   }
 }

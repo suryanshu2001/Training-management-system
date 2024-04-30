@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataEntryComponent } from "../../../shared-components/data-entry/data-entry.component";
 import { HeaderCompComponent } from 'src/app/components/shared-components/header-comp/header-comp.component';
@@ -22,9 +22,9 @@ export class AssignmentsPageComponent {
    
     updateToggle(toggle:boolean){
        
-        this.toggleShow = true;
+        this.toggleShow = toggle;
       }
-
+      
       tableVisible: boolean = false;
 
   constructor() { }

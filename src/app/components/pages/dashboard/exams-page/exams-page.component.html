@@ -26,8 +26,13 @@
     <div *ngIf="toggleShow">
       <app-data-entry
         (showTable)="toggleTable()"
-        [title]="'Exam-name'"
-      ></app-data-entry>
+        [title]="'examName'"
+        [marks]="'examTotalMarks'"
+        [dates]="'examDate'"
+        [times]="'examTime'"
+        [uploadFiles]="'uploadFiles'"
+          ></app-data-entry>
+          <br><br>
       <app-table [visible]="tableVisible"></app-table>
     </div>
   </div>

@@ -14,6 +14,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HeaderCompComponent } from "../header-comp/header-comp.component";
 import { FileUploadComponent } from '../modals/file-upload/file-upload.component';
 import { MatDialog } from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -26,23 +27,36 @@ import { MatDialog } from '@angular/material/dialog';
 
 export class DataEntryComponent{
   // showTableHeader = false;
-  @Output() showTable: EventEmitter<void> = new EventEmitter<void>();
+  @Output() showTable: EventEmitter<void> = new EventEmitter<void>(); //
   
   showFirstSection: boolean = true;
 
-    toggleSection() {
+    toggleSection() {            
         this.showFirstSection = !this.showFirstSection;
     }
 
+    toEdit(){
+      this.showFirstSection = true; //it enables edit operation when edit button is clicked
+    }
+  @Input() toggleShow: boolean = false;
+  @Output() deleteClicked = new EventEmitter<void>();
 
-  formdata={
-    examName:'',
-    totalMarks:'',
-    datepick:'',
-    time:''
+  onDeleteButtonClick(): void {
+    this.toggleShow=false;
+    this.deleteClicked.emit();
   }
+
+  clearForm(): void {
+    this.formdata = {}; // reset all the input fields when clicked on crossmark
+  }
+
+  formdata:any={ }
  
     @Input() title!:string;
+    @Input() marks!:string;
+    @Input() dates!:string;
+    @Input() times!:string;
+    @Input() uploadFiles!:string;
 
   // onClick() {
   //   this.showTableHeader = !this.showTableHeader;
@@ -52,7 +66,7 @@ export class DataEntryComponent{
   } 
 
     
-  constructor(public dialog: MatDialog) {}
+  constructor(private http: HttpClient,public dialog: MatDialog) {}
 
     openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
       this.dialog.open(FileUploadComponent, {
@@ -65,6 +79,9 @@ export class DataEntryComponent{
     toShow(){
       this.showTable.emit();
     }
+
+    
+    
 
   }
 
